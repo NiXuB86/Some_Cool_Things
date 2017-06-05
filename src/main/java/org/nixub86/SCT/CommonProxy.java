@@ -1,5 +1,6 @@
 package org.nixub86.SCT;
 
+import org.nixub86.SCT.Gases.GasesSCT;
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -8,12 +9,14 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class CommonProxy {
 	public void preInit(FMLPreInitializationEvent e) {
-		ItemsSCT.init();
+		ItemsSCT.preInit();
+		GasesSCT.preInit();
 	}
 	
 	public void init(FMLInitializationEvent e) {
-		RecipesSCT.init();
-		
+		RecipesSCT.Init();
+		ItemsSCT.Init();
+		GasesSCT.Init();
 	}
 	
 	public void postInit(FMLPostInitializationEvent e) {

@@ -17,7 +17,7 @@ public class SCT {
 	@Instance("SCT")
 	public static SCT instance;
 	
-	@SidedProxy(clientSide = "com.NiXuB86.SCT.ClientProxy", serverSide = "com.NiXuB86.SCT.CommonProxy")
+	@SidedProxy(clientSide = "org.nixub86.SCT.ClientProxy", serverSide = "org.nixub86.SCT.CommonProxy")
 	public static CommonProxy proxy;
 	
 	@EventHandler
