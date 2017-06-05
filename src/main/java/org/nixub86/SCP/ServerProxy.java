@@ -1,0 +1,31 @@
+package org.nixub86.SCP;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.WeightedRandomChestContent;
+import net.minecraftforge.common.ChestGenHooks;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+public class ServerProxy extends CommonProxy {
+
+	@Override
+	public void preInit(FMLPreInitializationEvent e) {
+		// TODO Auto-generated method stub
+		super.preInit(e);
+		
+	}
+
+	@Override
+	public void init(FMLInitializationEvent e) {
+		// TODO Auto-generated method stub
+		super.init(e);
+	}
+
+	@Override
+	public void postInit(FMLPostInitializationEvent e) {
+		// TODO Auto-generated method stub
+		super.postInit(e);
+	}
+	
+}
