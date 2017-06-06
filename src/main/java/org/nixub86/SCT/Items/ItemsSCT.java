@@ -9,7 +9,7 @@ public class ItemsSCT {
 	public static CreativeTabs SCTTab = new CreativeTabs("Some Cool Things"){
 		public Item getTabIconItem() {
 			//return ItemsSCP.;
-			return Items.arrow;
+			return Items.apple;
 		}
 	};
 	
