@@ -6,13 +6,12 @@ import net.minecraft.item.ItemPickaxe;
 
 public class Kirka extends ItemPickaxe{
 
-	protected Kirka(ToolMaterial material) {
-		super(material.EMERALD);
+	protected Kirka() {
+		super(ToolMaterial.EMERALD);
 		
 		this.setCreativeTab(ItemsSCT.SCTTab);
 		this.setNoRepair();
 		this.setUnlocalizedName("Kirka");
-		this.setTextureName(SCT.MODID+":kirka");
+		this.setTextureName("sct:Kirka");
 	}
-
 }
