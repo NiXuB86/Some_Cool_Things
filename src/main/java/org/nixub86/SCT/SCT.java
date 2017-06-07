@@ -1,5 +1,7 @@
 package org.nixub86.SCT;
 
+import org.nixub86.SCT.Items.ItemsSCT;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -23,6 +25,7 @@ public class SCT {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e)
 	{
+		ItemsSCT.RegisterItems();
 		proxy.preInit(e);
 	}
 	
