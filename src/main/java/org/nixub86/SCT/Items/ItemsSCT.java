@@ -24,7 +24,7 @@ public class ItemsSCT extends Item{
 	
 	//Please use this function for add items, do not create crutch
 	public static final void Init() {
-		//itemRegistry.addObject(423, "Pickaxe", new Kirka(Item.ToolMaterial.EMERALD));
+		//itemRegistry.addObject(423, "Pickaxe", new Kirka(Item.ToolMaterial.EMERALD)); //DON'T USE THIS!!! Because if you do this, you will register a item with id which can conflict if you have several mods!
 		
 		Kirka = new Kirka();
 		GameRegistry.registerItem(Kirka, "Kirka");
