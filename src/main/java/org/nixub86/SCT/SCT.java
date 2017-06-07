@@ -25,7 +25,6 @@ public class SCT {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e)
 	{
-		ItemsSCT.RegisterItems();
 		proxy.preInit(e);
 	}
 	

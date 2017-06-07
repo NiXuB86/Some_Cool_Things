@@ -13,16 +13,11 @@ public class ItemsSCT extends Item{
 		}
 	};
 	
-	public static void RegisterItems(){
-		
-		itemRegistry.addObject(423, "Pickaxe", new Kirka(Item.ToolMaterial.EMERALD));
-	}
-	
 	public static final void preInit() {
 		
 	}
 	
 	public static final void Init() {
-		
+		itemRegistry.addObject(423, "Pickaxe", new Kirka(Item.ToolMaterial.EMERALD));
 	}
 }
