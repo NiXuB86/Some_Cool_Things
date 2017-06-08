@@ -23,16 +23,16 @@ public class Kirka extends ItemPickaxe{
 	public void onCreated(ItemStack itemstack, World world, EntityPlayer player)
 	{}
 
-	@Override
+	   @Override
 	   public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float px, float py, float pz) {
-		world.func_147480_a(x , y , z , true);
-		world.func_147480_a(x+3 , y , z , true);
-		world.func_147480_a(x , y+3, z , true);
-		world.func_147480_a(x , y , z+3 , true);
-		/*world.func_147480_a(x+2 , y , z , true);
-		world.func_147480_a(x , y+2 , z , true);
-		world.func_147480_a(x , y , z+2 , true);*/
-		return true;
-	}
-}    
+	        for (int ix = -1; ix < 2; ix++) {
+	            for (int iy = -1; iy < 2; iy++) {
+	                for (int iz = -1; iz < 2; iz++) {
+	                    world.func_147480_a(x+ix, y+iy, z+iz, true);
+	                }
+	            }
+	        }
+	        return true;
+	 }
+} 
 
