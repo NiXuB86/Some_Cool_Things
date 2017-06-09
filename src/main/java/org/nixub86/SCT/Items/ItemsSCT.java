@@ -1,5 +1,6 @@
 package org.nixub86.SCT.Items;
 
+import org.nixub86.SCT.Gases.GasesSCT;
 import org.nixub86.SCT.Utils.Utils;
 
 import cpw.mods.fml.common.registry.GameRegistry;
