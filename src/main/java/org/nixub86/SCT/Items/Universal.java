@@ -9,11 +9,8 @@ import com.google.common.collect.Sets;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.settings.KeyBinding;
-//<<<<<<< HEAD
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-=======
-//>>>>>>> a495bf5f6a7956f791afabdeb1009355e19e0094
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemPickaxe;
@@ -39,7 +36,6 @@ public class Universal extends ItemPickaxe {
 		this.setTextureName("sct:Universal");
 		this.setUnlocalizedName("Universal");
 		
-//<<<<<<< HEAD
 		plavka = true;	
 		
 	}
@@ -49,7 +45,6 @@ public class Universal extends ItemPickaxe {
 		
 		return true;
 	 }*/
-//=======
 		plavka = false;
 		
 	}
@@ -66,5 +61,4 @@ public class Universal extends ItemPickaxe {
 		
 		return true;
 	}
-//>>>>>>> a495bf5f6a7956f791afabdeb1009355e19e0094
 }
