@@ -13,6 +13,7 @@
 # include markdowns
 !README.md
 !LICENSE
+!LICENSE - ART.txt
 
 # include sourcecode
 !src/
