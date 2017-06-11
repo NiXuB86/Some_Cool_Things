@@ -22,8 +22,6 @@ public class Universal extends ItemPickaxe {
 
 	public static boolean plavka;
 	
-	private int i;
-	
 	ItemStack stack;
 	
 	ModeOnPickaxe mode = new ModeOnPickaxe(null);
@@ -36,28 +34,19 @@ public class Universal extends ItemPickaxe {
 		this.setTextureName("sct:Universal");
 		this.setUnlocalizedName("Universal");
 		
+		
 		plavka = true;	
-		
-	}
-	
-	/*@Override
-	   public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float px, float py, float pz) {
-		
-		return true;
-	 }*/
-		plavka = false;
 		
 	}
 	
 	@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float px, float py, float pz) {
-		if(plavka=false){
+		if(plavka == false)
 			plavka = true;
-		}
-		if(plavka=true){
+		if(plavka)
 			plavka = false;
-		}
 		
+		System.out.println(plavka);
 		
 		return true;
 	}
