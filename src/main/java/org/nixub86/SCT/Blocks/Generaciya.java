@@ -22,6 +22,7 @@ public class Generaciya implements IWorldGenerator{
                     case -1: generateNether(world, random, chunkX * 16, chunkZ * 16); break;
                     case 0: generateOverworld(world, random, chunkX * 16, chunkZ * 16); break;
                     case 1: generateEnd(world, random, chunkX * 16, chunkZ * 16); break;
+                    case 8: generateMir(world, random, chunkX * 16, chunkZ * 16); break;
             }
     }
 
@@ -35,6 +36,11 @@ public class Generaciya implements IWorldGenerator{
     }
 
     private void generateOverworld(World world, Random random, int x, int z) 
+    {
+            this.addOreSpawn(ItemsSCT.Ryda, world, random, x, z, 16, 16, 4 + random.nextInt(3), 10, 15, 50);
+    }
+    
+    private void generateMir(World world, Random random, int x, int z) 
     {
             this.addOreSpawn(ItemsSCT.Ryda, world, random, x, z, 16, 16, 4 + random.nextInt(3), 10, 15, 50);
     }

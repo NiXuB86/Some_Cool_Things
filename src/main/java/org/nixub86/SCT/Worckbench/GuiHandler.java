@@ -1,7 +1,4 @@
-package org.nixub86.SCT.Utils;
-
-import org.nixub86.SCT.Worckbench.ContainerWorckbench;
-import org.nixub86.SCT.Worckbench.GuiWorckbench;
+package org.nixub86.SCT.Worckbench;
 
 import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;

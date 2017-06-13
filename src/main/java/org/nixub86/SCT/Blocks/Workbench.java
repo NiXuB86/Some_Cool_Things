@@ -4,7 +4,7 @@ import java.util.Random;
 
 import org.nixub86.SCT.SCT;
 import org.nixub86.SCT.Items.ItemsSCT;
-import org.nixub86.SCT.Utils.GuiHandler;
+import org.nixub86.SCT.Worckbench.GuiHandler;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -19,7 +19,7 @@ public class Workbench extends Block {
 	
 	this.setBlockName("Workbench");
 	this.setCreativeTab(ItemsSCT.SCTTab);
-	this.setBlockTextureName("");
+	this.setBlockTextureName("sct:work");
 	this.setHardness(5f);
 	this.setResistance(10F);
 	

@@ -1,6 +1,7 @@
 package org.nixub86.SCT.Worckbench;
 
 import org.lwjgl.opengl.GL11;
+import org.nixub86.SCT.SCT;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
@@ -10,7 +11,7 @@ import net.minecraft.world.World;
 
 public class GuiWorckbench extends GuiContainer{
 	
-	private static final ResourceLocation TextureWorkbench = new ResourceLocation("gui");
+	private static final ResourceLocation TextureWorkbench = new ResourceLocation("guiWorckbench.png");
 	 
     public GuiWorckbench(InventoryPlayer inventory, World world, int par3, int par4, int par5)
     {

@@ -4,9 +4,14 @@ import org.nixub86.SCT.SCT;
 import org.nixub86.SCT.Blocks.Generaciya;
 import org.nixub86.SCT.Blocks.Ryda;
 import org.nixub86.SCT.Blocks.Workbench;
+import org.nixub86.SCT.Dimension.BlockTP;
+import org.nixub86.SCT.Dimension.DimensionRegistry;
+import org.nixub86.SCT.Dimension.TP;
+import org.nixub86.SCT.Dimension.WorldProviderMira;
+import org.nixub86.SCT.Dimension.Biom.BiomeRegistry;
 import org.nixub86.SCT.Gases.GasesSCT;
-import org.nixub86.SCT.Utils.GuiHandler;
 import org.nixub86.SCT.Utils.Utils;
+import org.nixub86.SCT.Worckbench.GuiHandler;
 
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -15,9 +20,12 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 
 public class ItemsSCT extends Item{
+	
+	public static int dimensionId;
 	
 	public static CreativeTabs SCTTab = new CreativeTabs("Some Cool Things"){
 		public Item getTabIconItem() {
@@ -33,6 +41,9 @@ public class ItemsSCT extends Item{
 	public static Block Ryda;
 	public static Block Workbench;
 	
+	public static Block Tp;
+	public static Block BlockTP;
+	
 	public static Generaciya generaciya = new Generaciya();
 	
 	//Use this if you need to do something in preInit stage of minecraft
@@ -42,6 +53,12 @@ public class ItemsSCT extends Item{
 	
 	//Please use this function for add items, do not create crutch
 	public static final void Init() {
+		
+		/*Tp = new TP();
+		GameRegistry.registerBlock(Tp, "Tp");*/
+		
+		BlockTP = new BlockTP();
+		GameRegistry.registerBlock(BlockTP, "BlockTP");
 		
 		Workbench = new Workbench(null);
 		GameRegistry.registerBlock(Workbench, "Workbench");
@@ -62,7 +79,12 @@ public class ItemsSCT extends Item{
 		
 		
 		MinecraftForge.EVENT_BUS.register(new Utils());	
-		
 		NetworkRegistry.INSTANCE.registerGuiHandler(SCT.instance, new GuiHandler());
+		
+		DimensionRegistry.mainRegistry();
+		BiomeRegistry.mainRegsitry();
+		
+		/*DimensionManager.registerDimension(dimensionId, dimensionId);
+		DimensionManager.registerProviderType(dimensionId, WorldProviderMira.class, true);*/
 	}
 }

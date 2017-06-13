@@ -17,18 +17,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.item.crafting.RecipeBookCloning;
-import net.minecraft.item.crafting.RecipeFireworks;
-import net.minecraft.item.crafting.RecipesArmor;
-import net.minecraft.item.crafting.RecipesArmorDyes;
-import net.minecraft.item.crafting.RecipesCrafting;
-import net.minecraft.item.crafting.RecipesDyes;
-import net.minecraft.item.crafting.RecipesFood;
-import net.minecraft.item.crafting.RecipesIngots;
-import net.minecraft.item.crafting.RecipesMapCloning;
-import net.minecraft.item.crafting.RecipesMapExtending;
-import net.minecraft.item.crafting.RecipesTools;
-import net.minecraft.item.crafting.RecipesWeapons;
 import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.world.World;
@@ -38,9 +26,7 @@ public class CraftyWorckbench {
     private static final CraftyWorckbench instance = new CraftyWorckbench();
    
     private List recipes = new ArrayList();
-    private static final String __OBFID = "CL_00000090";
-
-    
+   
     public static final CraftyWorckbench getInstance()
     {
         
