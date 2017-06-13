@@ -57,7 +57,8 @@ public class BlockTP extends BlockPortal {
 				boolean flag = world.getBlock(x - 1, y, z) == this || world.getBlock(x + 1, y, z) == this;
 				boolean flag1 = world.getBlock(x, y, z - 1) == this || world.getBlock(x, y, z - 1) == this;
 				
-				if(flag && flag1){
+				if(flag && flag1)
+				{
 					world.setBlockToAir(x, y, z);
 				}else{
 					if((world.getBlock(x+b0, y, z+b1) != ItemsSCT.Ryda || world.getBlock(x-b0, y, z-b1) != this) && (world.getBlock(x-b0, y, z-b1) != ItemsSCT.Ryda || world.getBlock(x+b0, y, z+b1) != this)){
@@ -127,7 +128,7 @@ public class BlockTP extends BlockPortal {
 					if( l != -1 && l != 2 || i1 != -1 && i1 !=3){
 						Block j1 = world.getBlock(x + b0 * l, y + i1, z + b1 * l);
 								if(flag){
-									if(j1 != ItemsSCT.Ryda){
+									if(j1 != ItemsSCT.BlockTP){
 										return false;
 									}
 								}

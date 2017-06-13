@@ -1,15 +1,18 @@
 package org.nixub86.SCT.Dimension.Biom;
 
+import java.util.Random;
+
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class BiomOnMir extends BiomeGenBase{
-
-	public BiomOnMir(int p_i1971_1_) {
-		super(p_i1971_1_);
+	
+	public BiomOnMir(int id) {
+		super(id);
 		
 		this.spawnableCreatureList.add(new SpawnListEntry(EntitySlime.class, 5, 2, 10));
 		
@@ -18,10 +21,9 @@ public class BiomOnMir extends BiomeGenBase{
 		this.theBiomeDecorator.bigMushroomsPerChunk = 2;
 		
 		
-		this.topBlock = Blocks.glass;
-		this.fillerBlock = Blocks.glass;
+		this.topBlock = Blocks.grass;
+		//this.fillerBlock = Blocks.glass;
 		
 		
 	}
-
 }

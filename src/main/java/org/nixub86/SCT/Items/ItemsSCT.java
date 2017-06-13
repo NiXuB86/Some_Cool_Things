@@ -13,15 +13,19 @@ import org.nixub86.SCT.Gases.GasesSCT;
 import org.nixub86.SCT.Utils.Utils;
 import org.nixub86.SCT.Worckbench.GuiHandler;
 
+
+import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
+
 
 public class ItemsSCT extends Item{
 	
@@ -46,6 +50,7 @@ public class ItemsSCT extends Item{
 	
 	public static Generaciya generaciya = new Generaciya();
 	
+	
 	//Use this if you need to do something in preInit stage of minecraft
 	public static final void preInit() {
 		
@@ -53,10 +58,7 @@ public class ItemsSCT extends Item{
 	
 	//Please use this function for add items, do not create crutch
 	public static final void Init() {
-		
-		/*Tp = new TP();
-		GameRegistry.registerBlock(Tp, "Tp");*/
-		
+	
 		BlockTP = new BlockTP();
 		GameRegistry.registerBlock(BlockTP, "BlockTP");
 		
@@ -76,9 +78,11 @@ public class ItemsSCT extends Item{
 		GameRegistry.registerItem(Universal, "Universal Tolls");
 		
 		GameRegistry.registerWorldGenerator(generaciya, 0);
+	
 		
 		
-		MinecraftForge.EVENT_BUS.register(new Utils());	
+		MinecraftForge.EVENT_BUS.register(new Utils());
+		
 		NetworkRegistry.INSTANCE.registerGuiHandler(SCT.instance, new GuiHandler());
 		
 		DimensionRegistry.mainRegistry();
