@@ -19,6 +19,9 @@ public class BlockTP extends BlockPortal {
 	public BlockTP() {
 		super();
 		this.setCreativeTab(ItemsSCT.SCTTab);
+		this.setTickRandomly(true);
+		this.setBlockUnbreakable();
+		
 		
 	}
 	

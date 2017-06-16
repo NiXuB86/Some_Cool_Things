@@ -22,6 +22,7 @@ public class Workbench extends Block {
 	this.setBlockTextureName("sct:work");
 	this.setHardness(5f);
 	this.setResistance(10F);
+	this.setHarvestLevel("axe", 0);
 	
 	
 }

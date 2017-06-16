@@ -7,6 +7,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
 
 public class Utils{
@@ -34,4 +35,10 @@ public class Utils{
 		}
 	}
   }
+	
+	public static void registerEvents() 
+	{
+		 MinecraftForge.EVENT_BUS.register(new SaplingEvent());
+	}
+	
 }
