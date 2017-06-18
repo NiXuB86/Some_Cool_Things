@@ -2,6 +2,7 @@ package org.nixub86.SCT.Dimension.Biom;
 
 import java.util.Random;
 
+import org.nixub86.SCT.Cripy.EntityCrip1;
 import org.nixub86.SCT.Items.ItemsSCT;
 import org.nixub86.SCT.tree.WorldGenTree;
 
@@ -12,15 +13,18 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenBigTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class BiomOnMir extends BiomeGenBase{
-	
+public class BiomOnMir extends BiomeGenBase
+{
 	private WorldGenerator WorldTree;
-	private Object worldGeneratorTutorialBigTree;
 	
 	public BiomOnMir(int id) {
 		super(id);
 		
-		this.spawnableCreatureList.add(new SpawnListEntry(EntitySlime.class, 5, 2, 10));
+		this.setDisableRain();
+		
+		this.spawnableMonsterList.clear();
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityCrip1.class, 10, 1, 3));
+		
 		
 		this.theBiomeDecorator.treesPerChunk = 5;
 		this.theBiomeDecorator.grassPerChunk = 2;
@@ -30,7 +34,7 @@ public class BiomOnMir extends BiomeGenBase{
 		
 		
 		this.topBlock = Blocks.grass;
-		//this.fillerBlock = Blocks.glass;
+		this.fillerBlock = Blocks.dirt;
 	}
 	
 	public WorldGenAbstractTree func_150567_a(Random random)

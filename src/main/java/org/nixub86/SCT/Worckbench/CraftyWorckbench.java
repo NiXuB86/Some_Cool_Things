@@ -29,7 +29,6 @@ public class CraftyWorckbench {
    
     public static final CraftyWorckbench getInstance()
     {
-        
         return instance;
     }
 

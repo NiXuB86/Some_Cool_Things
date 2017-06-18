@@ -6,6 +6,7 @@ import org.nixub86.SCT.Blocks.Doski;
 import org.nixub86.SCT.Blocks.Generaciya;
 import org.nixub86.SCT.Blocks.Ryda;
 import org.nixub86.SCT.Blocks.Workbench;
+import org.nixub86.SCT.Cripy.Crip1;
 import org.nixub86.SCT.Dimension.BlockTP;
 import org.nixub86.SCT.Dimension.DimensionRegistry;
 import org.nixub86.SCT.Dimension.TP;
@@ -31,6 +32,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 
@@ -47,6 +49,9 @@ public class ItemsSCT extends Item{
 	public static ItemPickaxe Kirka;
 	public static ItemPickaxe Kirka_Lopata;
 	public static ItemPickaxe Universal;
+	public static ItemSword Sword;
+	
+	public static Item triniumdust;
 	
 	public static Block Ryda;
 	public static Block Workbench;
@@ -70,6 +75,11 @@ public class ItemsSCT extends Item{
 	//Please use this function for add items, do not create crutch
 	public static final void Init() 
 	{
+		triniumdust = new TriniumDust();
+		GameRegistry.registerItem(triniumdust, "triniumdust");
+		
+		
+		
 		leaves = new Leaves();
 		GameRegistry.registerBlock(leaves, "leaves");
 		
@@ -93,6 +103,12 @@ public class ItemsSCT extends Item{
 		
 		Ryda = new Ryda(null);
 		GameRegistry.registerBlock(Ryda, "Ryda");
+		
+		
+		
+		
+		Sword = new Sword(null);
+		GameRegistry.registerItem(Sword, "Sword");
 		
 		Kirka = new Kirka();
 		GameRegistry.registerItem(Kirka, "Kirka");
@@ -119,6 +135,7 @@ public class ItemsSCT extends Item{
 		NetworkRegistry.INSTANCE.registerGuiHandler(SCT.instance, new GuiHandler());
 		
 		
+		Crip1.mainRegistry();
 		DimensionRegistry.mainRegistry();
 		BiomeRegistry.mainRegsitry();
 		RecipesSCT.Init();
