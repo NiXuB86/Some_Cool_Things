@@ -31,9 +31,6 @@ public class Crip1 {
 		createEntity(EntityCrip1.class, "Mega Crip!!!!!! AAAAAAAAAA SYKA VSEM PISDA", 0x0004FF, 0xFF00E1);
 	}
 	
-	
-	
-	
 	public static void createEntity(Class entityClass, String entityName, int solidColor, int spotColor)
 	{
 
