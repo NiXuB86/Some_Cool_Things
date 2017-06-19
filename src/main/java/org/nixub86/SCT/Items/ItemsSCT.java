@@ -2,6 +2,7 @@ package org.nixub86.SCT.Items;
 
 import org.nixub86.SCT.RecipesSCT;
 import org.nixub86.SCT.SCT;
+import org.nixub86.SCT.Blocks.BlockXyita;
 import org.nixub86.SCT.Blocks.Doski;
 import org.nixub86.SCT.Blocks.Generaciya;
 import org.nixub86.SCT.Blocks.Ryda;
@@ -58,6 +59,7 @@ public class ItemsSCT extends Item{
 	public static Block Ryda;
 	public static Block TriniumWorkbench;
 	public static Block doski;
+	public static Block blockXyita;
 	
 	public static Block Tp;
 	public static Block BlockTP;
@@ -96,6 +98,11 @@ public class ItemsSCT extends Item{
 		
 		doski = new Doski(null);
 		GameRegistry.registerBlock(doski, "doski");
+		
+		
+		
+		blockXyita = new BlockXyita(null);
+		GameRegistry.registerBlock(blockXyita, "BlockXyita");
 		
 		
 		

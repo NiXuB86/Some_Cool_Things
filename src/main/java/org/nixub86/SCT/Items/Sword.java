@@ -21,11 +21,9 @@ public class Sword extends ItemSword {
 	public Sword(ToolMaterial material) {
 		super(SCT.Trinium);
 		
-		
 		this.setCreativeTab(ItemsSCT.SCTTab);
 		this.setTextureName("sword");
 		this.setUnlocalizedName("Sword");
-		
 	}
 	
 	@Override

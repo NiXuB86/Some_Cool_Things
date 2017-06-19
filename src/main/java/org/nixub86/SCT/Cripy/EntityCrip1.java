@@ -110,7 +110,7 @@ public class EntityCrip1 extends EntityMob
 
                 if (flag)
                 {
-                    this.kill();
+                    this.setFire(20);;
                 }
             }
         }

@@ -23,7 +23,8 @@ public class Ryda extends Block {
 		
 	}
 		
-	public Item getItemDropped(int par1, Random random, int par3) {
+	public Item getItemDropped(int par1, Random random, int par3) 
+	{
 		return Item.getItemFromBlock(ItemsSCT.Ryda);
 	}
 }
