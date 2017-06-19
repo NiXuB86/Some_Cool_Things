@@ -4,7 +4,7 @@ import java.util.Random;
 
 import org.nixub86.SCT.SCT;
 import org.nixub86.SCT.Items.ItemsSCT;
-import org.nixub86.SCT.Worckbench.GuiHandler;
+import org.nixub86.SCT.TriniumWorkbench.GuiHandler;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -12,14 +12,14 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
-public class Workbench extends Block {
+public class TriniumWorkbench extends Block {
 
-	public Workbench(Material material) {
+	public TriniumWorkbench(Material material) {
 		super(material.rock);
 	
-	this.setBlockName("Workbench");
+	this.setBlockName("Trinium Workbench");
 	this.setCreativeTab(ItemsSCT.SCTTab);
-	this.setBlockTextureName("sct:work");
+	this.setBlockTextureName("sct:TriniumWorkbench");
 	this.setHardness(5f);
 	this.setResistance(10F);
 	this.setHarvestLevel("axe", 0);
@@ -36,6 +36,6 @@ public class Workbench extends Block {
 	    }
 	  
 		public Item getItemDropped(int par1, Random random, int par3) {
-			return Item.getItemFromBlock(ItemsSCT.Workbench);
+			return Item.getItemFromBlock(ItemsSCT.TriniumWorkbench);
 		}
 }

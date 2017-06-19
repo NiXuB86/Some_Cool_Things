@@ -1,37 +1,34 @@
 package org.nixub86.SCT.Items;
 
-import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Cripy.EntityCrip1;
-
-
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class Sword extends ItemSword {
+import org.nixub86.SCT.SCT;
+import org.nixub86.SCT.Cripy.EntityCrip1;
+
+public class SharpSword extends ItemSword {
+private World world;
 	
-	private World world;
 	
-	
-	public Sword(ToolMaterial material) {
-		super(SCT.Trinium);
+	public SharpSword(ToolMaterial material) {
+		super(SCT.SharpenedTrinium);
 		
 		
 		this.setCreativeTab(ItemsSCT.SCTTab);
-		this.setTextureName("sword");
-		this.setUnlocalizedName("Sword");
+		this.setTextureName("SharpSword");
+		this.setUnlocalizedName("SharpSword");
 		
 	}
 	
 	@Override
 	public boolean hitEntity(ItemStack stack, EntityLivingBase entity, EntityLivingBase player)
 	{		
-		if(stack.getItem() == ItemsSCT.Sword)
+		if(stack.getItem() == ItemsSCT.SharpSword)
 		{
 			if(entity instanceof EntityCrip1)
 			{

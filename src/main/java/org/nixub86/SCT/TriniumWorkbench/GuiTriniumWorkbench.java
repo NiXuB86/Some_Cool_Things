@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Worckbench;
+package org.nixub86.SCT.TriniumWorkbench;
 
 import org.lwjgl.opengl.GL11;
 import org.nixub86.SCT.SCT;
@@ -9,13 +9,13 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class GuiWorckbench extends GuiContainer{
+public class GuiTriniumWorkbench extends GuiContainer{
 	
 	private static final ResourceLocation TextureWorkbench = new ResourceLocation("guiWorckbench.png");
 	 
-    public GuiWorckbench(InventoryPlayer inventory, World world, int par3, int par4, int par5)
+    public GuiTriniumWorkbench(InventoryPlayer inventory, World world, int par3, int par4, int par5)
     {
-        super(new ContainerWorckbench(inventory, world, par3, par4, par5));
+        super(new ContainerTriniumWorkbench(inventory, world, par3, par4, par5));
     }
  
     protected void drawGuiContainerForegroundLayer(int par1, int par2)

@@ -5,7 +5,7 @@ import org.nixub86.SCT.SCT;
 import org.nixub86.SCT.Blocks.Doski;
 import org.nixub86.SCT.Blocks.Generaciya;
 import org.nixub86.SCT.Blocks.Ryda;
-import org.nixub86.SCT.Blocks.Workbench;
+import org.nixub86.SCT.Blocks.TriniumWorkbench;
 import org.nixub86.SCT.Cripy.Crip1;
 import org.nixub86.SCT.Dimension.BlockTP;
 import org.nixub86.SCT.Dimension.DimensionRegistry;
@@ -13,9 +13,9 @@ import org.nixub86.SCT.Dimension.TP;
 import org.nixub86.SCT.Dimension.WorldProviderMira;
 import org.nixub86.SCT.Dimension.Biom.BiomeRegistry;
 import org.nixub86.SCT.Gases.GasesSCT;
+import org.nixub86.SCT.TriniumWorkbench.GuiHandler;
 import org.nixub86.SCT.Utils.SaplingEvent;
 import org.nixub86.SCT.Utils.Utils;
-import org.nixub86.SCT.Worckbench.GuiHandler;
 import org.nixub86.SCT.tree.Leaves;
 import org.nixub86.SCT.tree.WorldGenTree;
 import org.nixub86.SCT.tree.saplingBlock;
@@ -50,11 +50,13 @@ public class ItemsSCT extends Item{
 	public static ItemPickaxe Kirka_Lopata;
 	public static ItemPickaxe Universal;
 	public static ItemSword Sword;
+	public static ItemSword SharpSword;
 	
 	public static Item triniumdust;
+	public static Item triniumingot;
 	
 	public static Block Ryda;
-	public static Block Workbench;
+	public static Block TriniumWorkbench;
 	public static Block doski;
 	
 	public static Block Tp;
@@ -75,9 +77,11 @@ public class ItemsSCT extends Item{
 	//Please use this function for add items, do not create crutch
 	public static final void Init() 
 	{
-		triniumdust = new TriniumDust();
+		triniumdust = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("triniumdust").setUnlocalizedName("Trinium dust");
 		GameRegistry.registerItem(triniumdust, "triniumdust");
 		
+		triniumingot = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("triniumingot").setUnlocalizedName("Trinium Ingot");
+		GameRegistry.registerItem(triniumingot, "triniumingot");
 		
 		
 		leaves = new Leaves();
@@ -98,14 +102,15 @@ public class ItemsSCT extends Item{
 		BlockTP = new BlockTP();
 		GameRegistry.registerBlock(BlockTP, "BlockTP");
 		
-		Workbench = new Workbench(null);
-		GameRegistry.registerBlock(Workbench, "Workbench");
+		TriniumWorkbench = new TriniumWorkbench(null);
+		GameRegistry.registerBlock(TriniumWorkbench, "Workbench");
 		
 		Ryda = new Ryda(null);
 		GameRegistry.registerBlock(Ryda, "Ryda");
 		
 		
-		
+		SharpSword = new SharpSword(null);
+		GameRegistry.registerItem(SharpSword, "Sharp Sword");
 		
 		Sword = new Sword(null);
 		GameRegistry.registerItem(Sword, "Sword");
@@ -123,21 +128,14 @@ public class ItemsSCT extends Item{
 		GameRegistry.registerWorldGenerator(GenTree, 0);
 		
 		
-		GameRegistry.addRecipe(new ItemStack(Workbench, 1), 
-        new Object[]{ "AA", "AA",
-        ('A'), doski});
-		
-		
 		Utils.registerEvents();
 		
 		MinecraftForge.EVENT_BUS.register(new Utils());
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(SCT.instance, new GuiHandler());
 		
-		
 		Crip1.mainRegistry();
 		DimensionRegistry.mainRegistry();
 		BiomeRegistry.mainRegsitry();
-		RecipesSCT.Init();
 	}
 }

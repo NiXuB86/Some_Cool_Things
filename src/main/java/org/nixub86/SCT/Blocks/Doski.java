@@ -13,6 +13,7 @@ public class Doski extends Block {
 	public Doski(Material material) {
 		super(material.wood);
 		
+		this.setBlockName("Doski");
 		this.setBlockTextureName("sct:doski");
 		this.setCreativeTab(ItemsSCT.SCTTab);
 		this.setHardness(2f);

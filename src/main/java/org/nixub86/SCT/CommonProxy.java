@@ -14,8 +14,8 @@ public class CommonProxy {
 	}
 	
 	public void init(FMLInitializationEvent e) {
-		RecipesSCT.Init();
 		ItemsSCT.Init();
+		RecipesSCT.Init();
 		GasesSCT.Init();
 	}
 	

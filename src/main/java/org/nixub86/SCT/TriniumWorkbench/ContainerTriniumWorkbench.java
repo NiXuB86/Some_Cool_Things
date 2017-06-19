@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Worckbench;
+package org.nixub86.SCT.TriniumWorkbench;
 
 import org.nixub86.SCT.Items.ItemsSCT;
 
@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
 import net.minecraft.world.World;
 
-public class ContainerWorckbench extends Container{
+public class ContainerTriniumWorkbench extends Container{
 
 	public InventoryCrafting craftMatrix = new InventoryCrafting(this, 3, 3);
     public IInventory craftResult = new InventoryCraftResult();
@@ -23,7 +23,7 @@ public class ContainerWorckbench extends Container{
     private int posY;
     private int posZ;
  
-    public ContainerWorckbench(InventoryPlayer inventory, World world, int par3, int par4, int par5)
+    public ContainerTriniumWorkbench(InventoryPlayer inventory, World world, int par3, int par4, int par5)
     {
         this.worldObj = world;
         this.posX = par3;
@@ -60,7 +60,7 @@ public class ContainerWorckbench extends Container{
     
     public void onCraftMatrixChanged(IInventory inventory)
     {
-        this.craftResult.setInventorySlotContents(0, CraftyWorckbench.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj));
+        this.craftResult.setInventorySlotContents(0, CraftTriniumWorkbench.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj));
     }
  
     
@@ -84,7 +84,7 @@ public class ContainerWorckbench extends Container{
  
     public boolean canInteractWith(EntityPlayer entity)
     {
-        return this.worldObj.getBlock(this.posX, this.posY, this.posZ) != ItemsSCT.Workbench? false : entity.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
+        return this.worldObj.getBlock(this.posX, this.posY, this.posZ) != ItemsSCT.TriniumWorkbench? false : entity.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
     }
  
     

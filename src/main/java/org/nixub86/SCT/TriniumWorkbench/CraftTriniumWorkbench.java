@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Worckbench;
+package org.nixub86.SCT.TriniumWorkbench;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,18 +21,18 @@ import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraft.world.World;
 
-public class CraftyWorckbench {
+public class CraftTriniumWorkbench {
 	
-    private static final CraftyWorckbench instance = new CraftyWorckbench();
+    private static final CraftTriniumWorkbench instance = new CraftTriniumWorkbench();
    
     private List recipes = new ArrayList();
    
-    public static final CraftyWorckbench getInstance()
+    public static final CraftTriniumWorkbench getInstance()
     {
         return instance;
     }
 
-    private CraftyWorckbench()
+    private CraftTriniumWorkbench()
     {
     	///////////////////////////////////////////////////////////////////////
     	

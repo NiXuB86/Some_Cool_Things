@@ -12,7 +12,7 @@ public class Kirka extends ItemPickaxe{
 	private boolean Mod5x5;
 	
 	protected Kirka() {
-		super(ToolMaterial.EMERALD);
+		super(SCT.Trinium);
 		
 		this.setCreativeTab(ItemsSCT.SCTTab);
 		this.setNoRepair();

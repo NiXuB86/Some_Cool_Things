@@ -1,5 +1,8 @@
 package org.nixub86.SCT;
 
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import cpw.mods.fml.common.Mod;
@@ -37,4 +40,7 @@ public class SCT {
 	public void postInit(FMLPostInitializationEvent e) {
 	    proxy.postInit(e);
 	}
+	
+	public static ToolMaterial SharpenedTrinium = EnumHelper.addToolMaterial("SharpenedTrinium", 4, 3000, 16.0F, 8.0F, 20);
+	public static ToolMaterial Trinium = EnumHelper.addToolMaterial("Trinium", 3, 5000, 10.0F, 3.0F, 8);
 }
