@@ -2,9 +2,13 @@ package org.nixub86.SCT.Dimension;
 
 import org.nixub86.SCT.Dimension.Biom.BiomeRegistry;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.event.world.BlockEvent;
 
 public class WorldProviderMira extends WorldProvider{
 
@@ -23,5 +27,4 @@ public class WorldProviderMira extends WorldProvider{
 		
 		return "Mir";
 	}
-
 }

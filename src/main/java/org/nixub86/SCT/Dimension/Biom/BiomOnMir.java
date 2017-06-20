@@ -3,15 +3,19 @@ package org.nixub86.SCT.Dimension.Biom;
 import java.util.Random;
 
 import org.nixub86.SCT.Cripy.EntityCrip1;
+import org.nixub86.SCT.Dimension.WorldProviderMira;
 import org.nixub86.SCT.Items.ItemsSCT;
 import org.nixub86.SCT.tree.WorldGenTree;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenBigTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import net.minecraftforge.event.world.BlockEvent;
 
 public class BiomOnMir extends BiomeGenBase
 {
@@ -36,6 +40,8 @@ public class BiomOnMir extends BiomeGenBase
 		this.topBlock = Blocks.grass;
 		this.fillerBlock = Blocks.dirt;
 	}
+	
+	
 	
 	public WorldGenAbstractTree func_150567_a(Random random)
     {

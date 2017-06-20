@@ -125,7 +125,7 @@ public class BlockTP extends BlockPortal {
 			}
 			int l;
 			int i1;
-			for(l = -1; l <= 2; ++l){
+			for(l = -1; l <= 2; ++l){ 
 				for(i1 = -1; i1 <= 3; ++i1){
 					boolean flag = l == -1 || l == 2 || i1 == -1 || i1 == 3;
 					if( l != -1 && l != 2 || i1 != -1 && i1 !=3){
@@ -150,6 +150,4 @@ public class BlockTP extends BlockPortal {
 			return true;
 		}
 	}
-	
-
 }

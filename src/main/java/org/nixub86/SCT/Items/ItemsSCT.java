@@ -26,6 +26,7 @@ import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFire;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.creativetab.CreativeTabs;
@@ -56,6 +57,8 @@ public class ItemsSCT extends Item{
 	public static Item triniumdust;
 	public static Item triniumingot;
 	
+	public static Item Podarok;
+	
 	public static Block Ryda;
 	public static Block TriniumWorkbench;
 	public static Block doski;
@@ -84,6 +87,10 @@ public class ItemsSCT extends Item{
 		
 		triniumingot = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("triniumingot").setUnlocalizedName("Trinium Ingot");
 		GameRegistry.registerItem(triniumingot, "triniumingot");
+		
+		
+		Podarok = new Podarok();
+		GameRegistry.registerItem(Podarok, "Podarok");
 		
 		
 		leaves = new Leaves();
