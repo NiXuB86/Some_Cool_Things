@@ -36,11 +36,33 @@ public class CraftTriniumWorkbench {
     {
     	///////////////////////////////////////////////////////////////////////
     	
-    	this.addRecipe(new ItemStack(ItemsSCT.Ryda, 1), 
-                new Object[]{ "111", "111", "111",
-                ('1'), ItemsSCT.Ryda});
+    	//this.addRecipe(new ItemStack(ItemsSCT.Ryda, 1), 
+        //       new Object[]{ "111", "111", "111",
+        //       ('1'), ItemsSCT.Ryda});
         
+    	this.addRecipe(new ItemStack(ItemsSCT.Sword, 1), 
+    	       new Object[]{ " 1 ", "212", " 3 ",
+    	       ('1'), ItemsSCT.triniumingot, ('2'), Items.diamond, ('3'), Items.stick});
     	
+    	this.addRecipe(new ItemStack(ItemsSCT.SharpSword, 1),
+    		   new Object[]{ " + ", "*1*", " * ",
+    	       ('+'), Items.diamond, ('1'), ItemsSCT.Sword, ('*'), Items.flint});
+    	
+    	this.addRecipe(new ItemStack(ItemsSCT.Podarok, 2),
+         	   new Object[]{ "121", "232", "121",
+    	       ('1'), ItemsSCT.doski, ('2'), ItemsSCT.triniumingot, ('3'), Blocks.diamond_block});
+    	
+    	this.addRecipe(new ItemStack(ItemsSCT.Kirka, 1), 
+	    	   new Object[]{ "222", " 1 ", " 1 ",
+	    	   ('2'), ItemsSCT.triniumingot, ('1'), Items.stick});
+    	
+    	this.addRecipe(new ItemStack(ItemsSCT.Kirka_Lopata, 1), 
+ 	    	   new Object[]{ "232", " 1 ", " 1 ",
+ 	    	   ('2'), ItemsSCT.triniumingot, ('1'), Items.stick, ('3'), ItemsSCT.TriniumBlock});
+    	
+    	this.addRecipe(new ItemStack(ItemsSCT.Universal, 1), 
+ 	    	   new Object[]{ " 2 ", "232", " 1 ",
+ 	    	   ('2'), ItemsSCT.triniumingot, ('1'), Items.stick, ('3'), ItemsSCT.TriniumBlock});
     	
     ///////////////////////////////////////////////////////////////////////////
     	

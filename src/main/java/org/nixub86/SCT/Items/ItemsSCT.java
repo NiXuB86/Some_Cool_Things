@@ -6,6 +6,7 @@ import org.nixub86.SCT.Blocks.BlockXyita;
 import org.nixub86.SCT.Blocks.Doski;
 import org.nixub86.SCT.Blocks.Generaciya;
 import org.nixub86.SCT.Blocks.Ryda;
+import org.nixub86.SCT.Blocks.TriniumBlock;
 import org.nixub86.SCT.Blocks.TriniumWorkbench;
 import org.nixub86.SCT.Cripy.Crip1;
 import org.nixub86.SCT.Dimension.BlockTP;
@@ -63,6 +64,7 @@ public class ItemsSCT extends Item{
 	public static Block TriniumWorkbench;
 	public static Block doski;
 	public static Block blockXyita;
+	public static Block TriniumBlock;
 	
 	public static Block Tp;
 	public static Block BlockTP;
@@ -121,6 +123,9 @@ public class ItemsSCT extends Item{
 		
 		Ryda = new Ryda(null);
 		GameRegistry.registerBlock(Ryda, "Ryda");
+		
+		TriniumBlock = new TriniumBlock(null);
+		GameRegistry.registerBlock(TriniumBlock, "TriniumBlock");
 		
 		
 		SharpSword = new SharpSword(null);

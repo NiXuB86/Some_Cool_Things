@@ -18,5 +18,15 @@ public class RecipesSCT {
 		GameRegistry.addRecipe(new ItemStack(ItemsSCT.TriniumWorkbench, 1), 
 		        new Object[]{ "IAI", "AIA", "IAI",
 		        ('A'), ItemsSCT.doski, ('I'), ItemsSCT.triniumingot});
+		
+		GameRegistry.addRecipe(new ItemStack(ItemsSCT.TriniumBlock, 1), 
+	    	    new Object[]{ "111", "111", "111",
+	    	    ('1'), ItemsSCT.triniumingot});
+		
+		GameRegistry.addRecipe(new ItemStack(ItemsSCT.BlockTP, 1), 
+	    	    new Object[]{ "121", "*1*", "121",
+	    	    ('1'), ItemsSCT.TriniumBlock, ('2'), Blocks.glass, ('*'), Items.glowstone_dust});
+		
+		
 	}
 }

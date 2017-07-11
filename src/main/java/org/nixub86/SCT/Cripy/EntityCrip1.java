@@ -58,7 +58,7 @@ public class EntityCrip1 extends EntityMob
         super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(1.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(1);
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(1.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(300.0D);
         this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(1.0D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10);
     }
