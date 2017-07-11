@@ -2,6 +2,7 @@ package org.nixub86.SCT.Cripy;
 
 import org.nixub86.SCT.Items.ItemsSCT;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -44,7 +45,7 @@ public class EntityCrip1 extends EntityMob
         this.tasks.addTask(8, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
-        this.setSize(0.6F, 1.8F);	
+        this.setSize(0.6F, 1.8F);
 		
 	}
 	
@@ -56,11 +57,11 @@ public class EntityCrip1 extends EntityMob
 	protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(1.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(1);
-        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(1.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(1.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(1000.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(1.5D);
+        this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(500.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(10.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(1000);
     }
 
 	
@@ -115,6 +116,26 @@ public class EntityCrip1 extends EntityMob
             }
         }
         super.onLivingUpdate();
+    }
+
+	protected String getLivingSound()
+    {
+        return "mob.spider.say";
+    }
+
+    protected String getHurtSound()
+    {
+        return "mob.zombie.hurt";
+    }
+
+    protected String getDeathSound()
+    {
+        return "mob.creeper.death";
+    }
+
+    protected void func_145780_a(int p_145780_1_, int p_145780_2_, int p_145780_3_, Block p_145780_4_)
+    {
+        this.playSound("mob.zombie.step", 50F, 50F);
     }
 	
 	protected Item getDropItem()

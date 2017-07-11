@@ -18,8 +18,9 @@ public class WorldProviderMira extends WorldProvider{
 		this.dimensionId = DimensionRegistry.dimensionId;
 	}
 	
-	public IChunkProvider createChunkGeneration(){
-		return null;
+	public IChunkProvider createChunkGeneration()
+	{
+		return new ChunkProvaiderOnMir(this.worldObj, this.dimensionId, this.hasNoSky);
 	}
 	
 	@Override
