@@ -8,12 +8,15 @@ import org.nixub86.SCT.Items.ItemsSCT;
 import org.nixub86.SCT.tree.WorldGenTree;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenBigTree;
+import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.world.BlockEvent;
 
@@ -41,10 +44,13 @@ public class BiomOnMir extends BiomeGenBase
 		this.fillerBlock = Blocks.dirt;
 	}
 	
-	
+	/*public WorldGenerator getRandomWorldGenForGrass(Random random)
+	{
+        return random.nextInt(2) == 0 ? new WorldGenTallGrass(ItemsSCT.byl, 1) : new WorldGenTallGrass(ItemsSCT.byl, 2);
+    }*/
 	
 	public WorldGenAbstractTree func_150567_a(Random random)
     {
 		return (WorldGenAbstractTree)(random.nextInt(5) == 0 ? this.worldGeneratorSwamp : (random.nextInt(10) == 0 ? this.WorldTree : this.worldGeneratorTrees));
-    }
+    }	
 }

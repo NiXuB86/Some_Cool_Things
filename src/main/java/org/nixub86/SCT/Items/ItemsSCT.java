@@ -3,10 +3,12 @@ package org.nixub86.SCT.Items;
 import org.nixub86.SCT.RecipesSCT;
 import org.nixub86.SCT.SCT;
 import org.nixub86.SCT.Blocks.BlockXyita;
+import org.nixub86.SCT.Blocks.Bylishnik;
 import org.nixub86.SCT.Blocks.Doski;
 import org.nixub86.SCT.Blocks.Generaciya;
 import org.nixub86.SCT.Blocks.Ryda;
 import org.nixub86.SCT.Blocks.TriniumBlock;
+import org.nixub86.SCT.Blocks.Stone;
 import org.nixub86.SCT.Blocks.TriniumWorkbench;
 import org.nixub86.SCT.Cripy.Crip1;
 import org.nixub86.SCT.Dimension.BlockTP;
@@ -68,6 +70,8 @@ public class ItemsSCT extends Item{
 	
 	public static Block Tp;
 	public static Block BlockTP;
+	public static Block stone;
+	public static Block byl;
 	
 	public static Block stvol;
 	public static BlockLeaves leaves;
@@ -77,9 +81,7 @@ public class ItemsSCT extends Item{
 	public static WorldGenTree GenTree = new WorldGenTree(false);
 	
 	//Use this if you need to do something in preInit stage of minecraft
-	public static final void preInit() {
-		
-	}
+	public static final void preInit() {}
 	
 	//Please use this function for add items, do not create crutch
 	public static final void Init() 
@@ -89,7 +91,6 @@ public class ItemsSCT extends Item{
 		
 		triniumingot = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("triniumingot").setUnlocalizedName("Trinium Ingot");
 		GameRegistry.registerItem(triniumingot, "triniumingot");
-		
 		
 		Podarok = new Podarok();
 		GameRegistry.registerItem(Podarok, "Podarok");
@@ -108,12 +109,15 @@ public class ItemsSCT extends Item{
 		doski = new Doski(null);
 		GameRegistry.registerBlock(doski, "doski");
 		
+		byl = new Bylishnik(null);
+		GameRegistry.registerBlock(byl, "Bylishnik");
 		
 		
 		blockXyita = new BlockXyita(null);
 		GameRegistry.registerBlock(blockXyita, "BlockXyita");
 		
-		
+		stone = new Stone(null);
+		GameRegistry.registerBlock(stone, "stone");
 		
 		BlockTP = new BlockTP();
 		GameRegistry.registerBlock(BlockTP, "BlockTP");

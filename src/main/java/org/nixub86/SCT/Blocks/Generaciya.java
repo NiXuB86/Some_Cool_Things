@@ -32,12 +32,12 @@ public class Generaciya implements IWorldGenerator{
     int Ycoord = 10 + random.nextInt(128);
     int Zcoord = z + random.nextInt(16);
     
-    (new WorldGenMinable(ItemsSCT.Ryda, 1, 15, Blocks.end_stone)).generate(world, random, Xcoord, Ycoord, Zcoord);
+   // (new WorldGenMinable(ItemsSCT.Ryda, 1, 15, Blocks.end_stone)).generate(world, random, Xcoord, Ycoord, Zcoord);
     }
 
     private void generateOverworld(World world, Random random, int x, int z) 
     {
-            this.addOreSpawn(ItemsSCT.Ryda, world, random, x, z, 16, 16, 4 + random.nextInt(3), 10, 15, 50);
+            //this.addOreSpawn(ItemsSCT.Ryda, world, random, x, z, 16, 16, 4 + random.nextInt(3), 10, 15, 50);
     }
     
     private void generateMir(World world, Random random, int x, int z) 
@@ -53,7 +53,7 @@ public class Generaciya implements IWorldGenerator{
 
     int Zcoord = z + random.nextInt(16);
 
-    (new WorldGenMinable(ItemsSCT.Ryda, 1, 15, Blocks.netherrack)).generate(world, random, Xcoord, Ycoord, Zcoord);
+    //(new WorldGenMinable(ItemsSCT.Ryda, 1, 15, Blocks.netherrack)).generate(world, random, Xcoord, Ycoord, Zcoord);
     }
     
 /**
