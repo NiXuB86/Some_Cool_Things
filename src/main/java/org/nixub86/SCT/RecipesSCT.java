@@ -23,10 +23,10 @@ public class RecipesSCT {
 	    	    new Object[]{ "111", "111", "111",
 	    	    ('1'), ItemsSCT.triniumingot});
 		
-		GameRegistry.addRecipe(new ItemStack(ItemsSCT.BlockTP, 1), 
+		/*GameRegistry.addRecipe(new ItemStack(ItemsSCT.BlockTP, 1), 
 	    	    new Object[]{ "121", "*1*", "121",
 	    	    ('1'), ItemsSCT.TriniumBlock, ('2'), Blocks.glass, ('*'), Items.glowstone_dust});
-		
+		*/
 		
 	}
 }

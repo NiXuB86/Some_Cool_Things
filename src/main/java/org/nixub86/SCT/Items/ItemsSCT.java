@@ -12,6 +12,7 @@ import org.nixub86.SCT.Blocks.Stone;
 import org.nixub86.SCT.Blocks.TriniumWorkbench;
 import org.nixub86.SCT.Cripy.Crip1;
 import org.nixub86.SCT.Dimension.BlockTP;
+import org.nixub86.SCT.Dimension.TPBlock;
 import org.nixub86.SCT.Dimension.DimensionRegistry;
 import org.nixub86.SCT.Dimension.TP;
 import org.nixub86.SCT.Dimension.WorldProviderMira;
@@ -68,10 +69,10 @@ public class ItemsSCT extends Item{
 	public static Block blockXyita;
 	public static Block TriniumBlock;
 	
-	public static Block Tp;
 	public static Block BlockTP;
 	public static Block stone;
 	public static Block byl;
+	public static Block TPBlock;
 	
 	public static Block stvol;
 	public static BlockLeaves leaves;
@@ -121,6 +122,9 @@ public class ItemsSCT extends Item{
 		
 		BlockTP = new BlockTP();
 		GameRegistry.registerBlock(BlockTP, "BlockTP");
+		
+		TPBlock = new TPBlock(null);
+		GameRegistry.registerBlock(TPBlock, "TPBlock");
 		
 		TriniumWorkbench = new TriniumWorkbench(null);
 		GameRegistry.registerBlock(TriniumWorkbench, "Workbench");

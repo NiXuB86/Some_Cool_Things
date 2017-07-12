@@ -43,8 +43,8 @@ public class BiomOnMir extends BiomeGenBase
 		this.topBlock = Blocks.grass;
 		this.fillerBlock = Blocks.dirt;
 	}
-	
-	/*public WorldGenerator getRandomWorldGenForGrass(Random random)
+	/*
+	public WorldGenerator getRandomWorldGenForGrass(Random random)
 	{
         return random.nextInt(2) == 0 ? new WorldGenTallGrass(ItemsSCT.byl, 1) : new WorldGenTallGrass(ItemsSCT.byl, 2);
     }*/
