@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Dimension;
+package org.nixub86.SCT.Dimensions.Lush;
 
 import java.util.Random;
 
@@ -88,9 +88,9 @@ public class BlockTP extends BlockPortal {
 				if(thePlayer.timeUntilPortal > 0){
 					thePlayer.timeUntilPortal = 10;
 					
-				}else if(thePlayer.dimension != DimensionRegistry.dimensionId){
+				}else if(thePlayer.dimension != DimensionRegistry.LushId){
 					thePlayer.timeUntilPortal = 10;
-					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, DimensionRegistry.dimensionId, new TP(server.worldServerForDimension(DimensionRegistry.dimensionId)));
+					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, DimensionRegistry.LushId, new TP(server.worldServerForDimension(DimensionRegistry.LushId)));
 					
 				}else{
 					thePlayer.timeUntilPortal = 10;

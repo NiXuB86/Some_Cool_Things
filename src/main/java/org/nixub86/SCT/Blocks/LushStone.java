@@ -8,14 +8,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
-public class Stone extends Block {
+public class LushStone extends Block {
 
-	public Stone(Material material) {
+	public LushStone(Material material) {
 		super(material.rock);
 		
 		this.setCreativeTab(ItemsSCT.SCTTab);
-		this.setBlockName("Stone");
-		this.setBlockTextureName("stone");
+		this.setBlockName("LushStone");
+		this.setBlockTextureName("LushStone");
 
 	}
 	

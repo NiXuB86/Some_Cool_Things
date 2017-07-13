@@ -6,7 +6,8 @@ import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-import org.nixub86.SCT.Cripy.Entity.EntityCrip1;
+import org.nixub86.SCT.Cripy.RenderKellog;
+import org.nixub86.SCT.Cripy.Entity.EntityKellog;
 import org.nixub86.SCT.Cripy.Entity.EntityNormCripa;
 import org.nixub86.SCT.Cripy.Entity.EntityOpasnogoCripa;
 import org.nixub86.SCT.Cripy.Render.RenderCrip1;
@@ -24,17 +25,15 @@ public class ClientProxy extends CommonProxy {
 	
 	public void registerRenderers()
 	{
-		RenderingRegistry.registerEntityRenderingHandler(EntityCrip1.class, new RenderCrip1(new ModelBiped(), 0));
+		RenderingRegistry.registerEntityRenderingHandler(EntityKellog.class, new RenderKellog(new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityNormCripa.class, new RenderNormCripa(new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityOpasnogoCripa.class, new RenderNormCripa(new ModelBiped(), 0));
-
 	}
 	
 	public void registerEntities()
 	{
 		ModEntityID = EntityRegistry.findGlobalUniqueEntityId();
-
-		EntityRegistry.registerModEntity(EntityCrip1.class, "Mega Crip!!!!!! AAAAAAAAAA SYKA VSEM PISDA", ModEntityID++, SCT.instance, 80, 1, false);
+		EntityRegistry.registerModEntity(EntityKellog.class, "Kellog", ModEntityID++, SCT.instance, 80, 1, false);
 		EntityRegistry.registerModEntity(EntityNormCripa.class, "Norm Crip", ModEntityID++, SCT.instance, 80, 1, false);
 		EntityRegistry.registerModEntity(EntityOpasnogoCripa.class, "OpasniyCrip", ModEntityID++, SCT.instance, 80, 1, false);
 	}

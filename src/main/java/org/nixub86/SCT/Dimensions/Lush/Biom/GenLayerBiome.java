@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Dimension.Biom;
+package org.nixub86.SCT.Dimensions.Lush.Biom;
 
 
 import java.util.ArrayList;
@@ -41,14 +41,14 @@ public class GenLayerBiome extends GenLayer
             desertBiomes.add(new BiomeEntry(BiomeGenBase.swampland, 10));
             desertBiomes.add(new BiomeEntry(BiomeGenBase.plains, 10));
             desertBiomes.add(new BiomeEntry(BiomeGenBase.taiga, 10));*/
-            desertBiomes.add(new BiomeEntry(BiomeRegistry.BiomVMire, 10));
+            desertBiomes.add(new BiomeEntry(BiomeRegistry.BiomInLush, 10));
         }
         else
         {
            /* desertBiomes.add(new BiomeEntry(BiomeGenBase.desert, 30));
             desertBiomes.add(new BiomeEntry(BiomeGenBase.savanna, 20));
             desertBiomes.add(new BiomeEntry(BiomeGenBase.plains, 10));*/
-            desertBiomes.add(new BiomeEntry(BiomeRegistry.BiomVMire, 10));
+            desertBiomes.add(new BiomeEntry(BiomeRegistry.BiomInLush, 10));
         }
     }
 

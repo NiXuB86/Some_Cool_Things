@@ -24,18 +24,15 @@ public class TriniumWorkbench extends Block {
 	this.setResistance(10F);
 	this.setHarvestLevel("axe", 0);
 	
+	}
 	
-}
-	  public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
-	    {
-		  if(!world.isRemote)
-			  player.openGui(SCT.instance, GuiHandler.id, world, x, y, z);
-		
-		  return true;
-	    
-	    }
+	public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9) {
+		if(!world.isRemote)
+			player.openGui(SCT.instance, GuiHandler.id, world, x, y, z);
+		return true;
+	}
 	  
-		public Item getItemDropped(int par1, Random random, int par3) {
-			return Item.getItemFromBlock(ItemsSCT.TriniumWorkbench);
-		}
+	public Item getItemDropped(int par1, Random random, int par3) {
+		return Item.getItemFromBlock(ItemsSCT.TriniumWorkbench);
+	}
 }

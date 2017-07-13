@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Dimension;
+package org.nixub86.SCT.Dimensions.Lush;
 
 import org.nixub86.SCT.Items.ItemsSCT;
 

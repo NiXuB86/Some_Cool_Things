@@ -1,7 +1,7 @@
 package org.nixub86.SCT.Items;
 
 import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Cripy.Entity.EntityCrip1;
+import org.nixub86.SCT.Cripy.Entity.EntityKellog;
 
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;
@@ -30,7 +30,7 @@ public class Sword extends ItemSword {
 	{		
 		if(stack.getItem() == ItemsSCT.Sword)
 		{
-			if(entity instanceof EntityCrip1)
+			if(entity instanceof EntityKellog)
 			{
 				if(player.getActivePotionEffect(Potion.damageBoost) == null)
 				{
