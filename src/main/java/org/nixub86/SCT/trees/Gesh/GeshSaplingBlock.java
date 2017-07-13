@@ -1,4 +1,4 @@
-package org.nixub86.SCT.tree;
+package org.nixub86.SCT.trees.Gesh;
 
 import java.util.List;
 import java.util.Random;
@@ -27,13 +27,13 @@ import net.minecraft.world.gen.feature.WorldGenTaiga2;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
-public class saplingBlock extends BlockSapling 
+public class GeshSaplingBlock extends BlockSapling 
 {
 	public static final String[] field_149882_a = new String[] {"oak"};
     private static final IIcon[] field_149881_b = new IIcon[field_149882_a.length];
     private static final String __OBFID = "CL_00000305";
 
-    public saplingBlock()
+    public GeshSaplingBlock()
     {
         float f = 0.4F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f * 2.0F, 0.5F + f);
@@ -82,7 +82,7 @@ public class saplingBlock extends BlockSapling
     {
         if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(p_149878_1_, p_149878_5_, p_149878_2_, p_149878_3_, p_149878_4_)) return;
         int l = p_149878_1_.getBlockMetadata(p_149878_2_, p_149878_3_, p_149878_4_) & 7;
-        Object object = p_149878_5_.nextInt(10) == 0 ? new WorldGenTree(true) : new WorldGenTree(true);
+        Object object = p_149878_5_.nextInt(10) == 0 ? new WorldGenGeshTree(true) : new WorldGenGeshTree(true);
         int i1 = 0;
         int j1 = 0;
         boolean flag = false;
@@ -101,7 +101,7 @@ public class saplingBlock extends BlockSapling
                     {
                         if (this.func_149880_a(p_149878_1_, p_149878_2_ + i1, p_149878_3_, p_149878_4_ + j1, 1) && this.func_149880_a(p_149878_1_, p_149878_2_ + i1 + 1, p_149878_3_, p_149878_4_ + j1, 1) && this.func_149880_a(p_149878_1_, p_149878_2_ + i1, p_149878_3_, p_149878_4_ + j1 + 1, 1) && this.func_149880_a(p_149878_1_, p_149878_2_ + i1 + 1, p_149878_3_, p_149878_4_ + j1 + 1, 1))
                         {
-                            object = new WorldGenTree(true);
+                            object = new WorldGenGeshTree(true);
                             flag = true;
                             break label78;
                         }
@@ -112,12 +112,12 @@ public class saplingBlock extends BlockSapling
                 {
                     j1 = 0;
                     i1 = 0;
-                    object = new WorldGenTree(true);
+                    object = new WorldGenGeshTree(true);
                 }
 
                 break;
             case 2:
-                object = new WorldGenTree(true);
+                object = new WorldGenGeshTree(true);
                 break;
             case 3:
                 label93:
@@ -128,7 +128,7 @@ public class saplingBlock extends BlockSapling
                     {
                         if (this.func_149880_a(p_149878_1_, p_149878_2_ + i1, p_149878_3_, p_149878_4_ + j1, 3) && this.func_149880_a(p_149878_1_, p_149878_2_ + i1 + 1, p_149878_3_, p_149878_4_ + j1, 3) && this.func_149880_a(p_149878_1_, p_149878_2_ + i1, p_149878_3_, p_149878_4_ + j1 + 1, 3) && this.func_149880_a(p_149878_1_, p_149878_2_ + i1 + 1, p_149878_3_, p_149878_4_ + j1 + 1, 3))
                         {
-                            object = new WorldGenTree(true);
+                            object = new WorldGenGeshTree(true);
                             flag = true;
                             break label93;
                         }
@@ -139,12 +139,12 @@ public class saplingBlock extends BlockSapling
                 {
                     j1 = 0;
                     i1 = 0;
-                    object = new WorldGenTree(true);
+                    object = new WorldGenGeshTree(true);
                 }
 
                 break;
             case 4:
-                object = new WorldGenTree(true);
+                object = new WorldGenGeshTree(true);
                 break;
             case 5:
                 label108:
@@ -155,7 +155,7 @@ public class saplingBlock extends BlockSapling
                     {
                         if (this.func_149880_a(p_149878_1_, p_149878_2_ + i1, p_149878_3_, p_149878_4_ + j1, 5) && this.func_149880_a(p_149878_1_, p_149878_2_ + i1 + 1, p_149878_3_, p_149878_4_ + j1, 5) && this.func_149880_a(p_149878_1_, p_149878_2_ + i1, p_149878_3_, p_149878_4_ + j1 + 1, 5) && this.func_149880_a(p_149878_1_, p_149878_2_ + i1 + 1, p_149878_3_, p_149878_4_ + j1 + 1, 5))
                         {
-                            object = new WorldGenTree(true);
+                            object = new WorldGenGeshTree(true);
                             flag = true;
                             break label108;
                         }

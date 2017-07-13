@@ -3,7 +3,6 @@ package org.nixub86.SCT.Dimensions.Lush.Biom;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import net.minecraft.util.WeightedRandom;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;

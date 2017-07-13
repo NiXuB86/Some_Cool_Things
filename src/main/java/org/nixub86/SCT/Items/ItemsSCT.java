@@ -4,8 +4,8 @@ import org.nixub86.SCT.RecipesSCT;
 import org.nixub86.SCT.SCT;
 import org.nixub86.SCT.Armor.Armor;
 import org.nixub86.SCT.Blocks.BlockXyita;
-import org.nixub86.SCT.Blocks.Bylishnik;
-import org.nixub86.SCT.Blocks.Doski;
+import org.nixub86.SCT.Blocks.LushCobblestone;
+import org.nixub86.SCT.Blocks.GeshPlanks;
 import org.nixub86.SCT.Blocks.Generaciya;
 import org.nixub86.SCT.Blocks.Ryda;
 import org.nixub86.SCT.Blocks.TriniumBlock;
@@ -18,16 +18,16 @@ import org.nixub86.SCT.Dimensions.Lush.TP;
 import org.nixub86.SCT.Dimensions.Lush.TPBlock;
 import org.nixub86.SCT.Dimensions.Lush.WorldProviderLush;
 import org.nixub86.SCT.Dimensions.Lush.Biom.BiomeRegistry;
-import org.nixub86.SCT.Cripy.NormCrip;
-import org.nixub86.SCT.Cripy.OpasniyCrip;
+import org.nixub86.SCT.Cripy.Mush;
+import org.nixub86.SCT.Cripy.MuthCrip;
 import org.nixub86.SCT.Gases.GasesSCT;
 import org.nixub86.SCT.TriniumWorkbench.GuiHandler;
 import org.nixub86.SCT.Utils.SaplingEvent;
 import org.nixub86.SCT.Utils.Utils;
-import org.nixub86.SCT.tree.Leaves;
-import org.nixub86.SCT.tree.WorldGenTree;
-import org.nixub86.SCT.tree.saplingBlock;
-import org.nixub86.SCT.tree.stvolBlock;
+import org.nixub86.SCT.trees.Gesh.GeshLeaves;
+import org.nixub86.SCT.trees.Gesh.GeshSaplingBlock;
+import org.nixub86.SCT.trees.Gesh.GeshWoodBlock;
+import org.nixub86.SCT.trees.Gesh.WorldGenGeshTree;
 
 import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -76,23 +76,10 @@ public class ItemsSCT extends Item{
 	
 	public static ItemFood Food;
 	
-	public static Block Ryda;
-	public static Block TriniumWorkbench;
-	public static Block doski;
-	public static Block blockXyita;
-	public static Block TriniumBlock;
 	
-	public static Block BlockTP;
-	public static Block LushStone;
-	public static Block byl;
-	public static Block TPBlock;
-	
-	public static Block stvol;
-	public static BlockLeaves leaves;
-	public static BlockSapling sapl;
 	
 	public static Generaciya generaciya = new Generaciya();
-	public static WorldGenTree GenTree = new WorldGenTree(false);
+	public static WorldGenGeshTree GenTree = new WorldGenGeshTree(false);
 	
 	//Use this if you need to do something in preInit stage of minecraft
 	public static final void preInit() {}
@@ -110,10 +97,10 @@ public class ItemsSCT extends Item{
 		GameRegistry.registerItem(armorpants, "armorpants");
 		GameRegistry.registerItem(armorboots, "armorboots");
 		
-		triniumdust = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("triniumdust").setUnlocalizedName("Trinium dust");
+		triniumdust = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("sct:TriniumDust").setUnlocalizedName("Trinium dust");
 		GameRegistry.registerItem(triniumdust, "triniumdust");
 		
-		triniumingot = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("triniumingot").setUnlocalizedName("Trinium Ingot");
+		triniumingot = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("sct:TriniumIngot").setUnlocalizedName("Trinium Ingot");
 		GameRegistry.registerItem(triniumingot, "triniumingot");
 		
 		Podarok = new Podarok();
@@ -123,49 +110,13 @@ public class ItemsSCT extends Item{
 		GameRegistry.registerItem(Food, "Food");
 		
 		
-		leaves = new Leaves();
-		GameRegistry.registerBlock(leaves, "leaves");
-		
-		sapl = new saplingBlock();
-		GameRegistry.registerBlock(sapl, "sapl");
-		
-		stvol = new stvolBlock(null);
-		GameRegistry.registerBlock(stvol, "stvol");
 		
 		
-		doski = new Doski(null);
-		GameRegistry.registerBlock(doski, "doski");
 		
-		byl = new Bylishnik(null);
-		GameRegistry.registerBlock(byl, "Bylishnik");
-		
-		
-		blockXyita = new BlockXyita(null);
-		GameRegistry.registerBlock(blockXyita, "BlockXyita");
-		
-		LushStone = new LushStone(null);
-		GameRegistry.registerBlock(LushStone, "LushStone");
-		
-		BlockTP = new BlockTP();
-		GameRegistry.registerBlock(BlockTP, "BlockTP");
-		
-		TPBlock = new TPBlock(null);
-		GameRegistry.registerBlock(TPBlock, "TPBlock");
-		
-		TriniumWorkbench = new TriniumWorkbench(null);
-		GameRegistry.registerBlock(TriniumWorkbench, "Workbench");
-		
-		Ryda = new Ryda(null);
-		GameRegistry.registerBlock(Ryda, "Ryda");
-		
-		TriniumBlock = new TriniumBlock(null);
-		GameRegistry.registerBlock(TriniumBlock, "TriniumBlock");
-		
-		
-		SharpSword = new SharpSword(null);
+		SharpSword = new SharpTriniumSword(null);
 		GameRegistry.registerItem(SharpSword, "Sharp Sword");
 		
-		Sword = new Sword(null);
+		Sword = new TriniumSword(null);
 		GameRegistry.registerItem(Sword, "Sword");
 		
 		Kirka = new Kirka();
@@ -188,8 +139,8 @@ public class ItemsSCT extends Item{
 		NetworkRegistry.INSTANCE.registerGuiHandler(SCT.instance, new GuiHandler());
 		
 		Kellog.mainRegistry();
-		NormCrip.mainRegistry();
-		OpasniyCrip.mainRegistry();
+		Mush.mainRegistry();
+		MuthCrip.mainRegistry();
 		DimensionRegistry.mainRegistry();
 		BiomeRegistry.mainRegsitry();
 	}

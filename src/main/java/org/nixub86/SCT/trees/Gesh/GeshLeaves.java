@@ -1,8 +1,9 @@
-package org.nixub86.SCT.tree;
+package org.nixub86.SCT.trees.Gesh;
 
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.nixub86.SCT.Blocks.BlocksSCT;
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import cpw.mods.fml.relauncher.Side;
@@ -22,14 +23,14 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
-public class Leaves extends BlockLeaves {
+public class GeshLeaves extends BlockLeaves {
 
 	int[] field_150128_a;
     @SideOnly(Side.CLIENT)
     protected int field_150127_b;
     protected IIcon[][] field_150129_M = new IIcon[2][];
    
-    public Leaves()
+    public GeshLeaves()
     {
         super();
         this.setTickRandomly(true);
@@ -219,7 +220,7 @@ public class Leaves extends BlockLeaves {
 
     public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
     {
-        return Item.getItemFromBlock(ItemsSCT.sapl);
+        return Item.getItemFromBlock(BlocksSCT.GeshSapling);
     }
 
     

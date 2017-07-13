@@ -20,9 +20,9 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
-public class EntityNormCripa extends EntityAnimal {
+public class EntityMush extends EntityAnimal {
 
-	public EntityNormCripa(World world)
+	public EntityMush(World world)
     {
 		 super( world);
 	        this.setSize(0.9F, 1.3F);
@@ -37,9 +37,9 @@ public class EntityNormCripa extends EntityAnimal {
 	        this.tasks.addTask(7, new EntityAILookIdle(this));
     }
 
-	public EntityNormCripa createChild(EntityAgeable Ea)
+	public EntityMush createChild(EntityAgeable Ea)
     {
-        return new EntityNormCripa(this.worldObj);
+        return new EntityMush(this.worldObj);
     }
 	
 	public boolean isAIEnabled()

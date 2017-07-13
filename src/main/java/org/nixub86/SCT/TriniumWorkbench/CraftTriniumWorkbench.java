@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
+import org.nixub86.SCT.Blocks.BlocksSCT;
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -50,7 +51,7 @@ public class CraftTriniumWorkbench {
     	
     	this.addRecipe(new ItemStack(ItemsSCT.Podarok, 2),
          	   new Object[]{ "121", "232", "121",
-    	       ('1'), ItemsSCT.doski, ('2'), ItemsSCT.triniumingot, ('3'), Blocks.diamond_block});
+    	       ('1'), BlocksSCT.GeshPlanks, ('2'), ItemsSCT.triniumingot, ('3'), Items.diamond});
     	
     	this.addRecipe(new ItemStack(ItemsSCT.Kirka, 1), 
 	    	   new Object[]{ "222", " 1 ", " 1 ",
@@ -58,11 +59,11 @@ public class CraftTriniumWorkbench {
     	
     	this.addRecipe(new ItemStack(ItemsSCT.Kirka_Lopata, 1), 
  	    	   new Object[]{ "232", " 1 ", " 1 ",
- 	    	   ('2'), ItemsSCT.triniumingot, ('1'), Items.stick, ('3'), ItemsSCT.TriniumBlock});
+ 	    	   ('2'), ItemsSCT.triniumingot, ('1'), Items.stick, ('3'), BlocksSCT.TriniumBlock});
     	
     	this.addRecipe(new ItemStack(ItemsSCT.Universal, 1), 
  	    	   new Object[]{ " 2 ", "232", " 1 ",
- 	    	   ('2'), ItemsSCT.triniumingot, ('1'), Items.stick, ('3'), ItemsSCT.TriniumBlock});
+ 	    	   ('2'), ItemsSCT.triniumingot, ('1'), Items.stick, ('3'), BlocksSCT.TriniumBlock});
     	
     ///////////////////////////////////////////////////////////////////////////
     	

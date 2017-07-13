@@ -22,9 +22,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityOpasnogoCripa extends EntityMob{
+public class EntityMuth extends EntityMob{
 	
-	public EntityOpasnogoCripa(World world) 
+	public EntityMuth(World world) 
 	{
 		super(world);
         this.getNavigator().setBreakDoors(false);
@@ -56,9 +56,9 @@ public class EntityOpasnogoCripa extends EntityMob{
     }
 
 	
-	public EntityOpasnogoCripa createChild(EntityAgeable p_90011_1_) 
+	public EntityMuth createChild(EntityAgeable p_90011_1_) 
 	{
-		return new EntityOpasnogoCripa(worldObj);
+		return new EntityMuth(worldObj);
 	}
 	
 	

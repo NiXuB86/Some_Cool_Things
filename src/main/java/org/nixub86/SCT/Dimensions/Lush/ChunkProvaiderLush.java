@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 
+import org.nixub86.SCT.Blocks.BlocksSCT;
 import org.nixub86.SCT.Dimensions.Lush.Biom.BiomLush;
 import org.nixub86.SCT.Items.ItemsSCT;
 
@@ -172,7 +173,7 @@ public class ChunkProvaiderLush implements IChunkProvider {
 							double d15 = d10 - d16;
 							for (int k3 = 0; k3 < 4; ++k3) {
 								if ((d15 += d16) > 0.0D) {
-									blocks[j3 += short1] = ItemsSCT.LushStone;//these can be set to custom blocks
+									blocks[j3 += short1] = BlocksSCT.LushStone;//these can be set to custom blocks
 								} else if (k2 * 8 + l2 < b0) {
 									blocks[j3 += short1] = Blocks.water;//these can be set to custom blocks
 								} else {

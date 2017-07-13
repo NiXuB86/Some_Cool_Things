@@ -8,9 +8,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
-public class Doski extends Block {
+public class GeshPlanks extends Block {
 
-	public Doski(Material material) {
+	public GeshPlanks(Material material) {
 		super(material.wood);
 		
 		this.setBlockName("Doski");

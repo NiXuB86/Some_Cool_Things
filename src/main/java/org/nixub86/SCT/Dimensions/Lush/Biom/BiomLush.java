@@ -3,10 +3,10 @@ package org.nixub86.SCT.Dimensions.Lush.Biom;
 import java.util.Random;
 import org.nixub86.SCT.Dimensions.Lush.WorldProviderLush;
 import org.nixub86.SCT.Cripy.Entity.EntityKellog;
-import org.nixub86.SCT.Cripy.Entity.EntityNormCripa;
-import org.nixub86.SCT.Cripy.Entity.EntityOpasnogoCripa;
+import org.nixub86.SCT.Cripy.Entity.EntityMush;
+import org.nixub86.SCT.Cripy.Entity.EntityMuth;
 import org.nixub86.SCT.Items.ItemsSCT;
-import org.nixub86.SCT.tree.WorldGenTree;
+import org.nixub86.SCT.trees.Gesh.WorldGenGeshTree;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.Block;
@@ -33,14 +33,14 @@ public class BiomLush extends BiomeGenBase
 		
 		this.spawnableMonsterList.clear();
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityKellog.class, 30, 1, 3));
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityOpasnogoCripa.class, 25, 2, 4));
-		this.spawnableCreatureList.add(new SpawnListEntry(EntityNormCripa.class, 50, 2, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityMuth.class, 25, 2, 4));
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityMush.class, 50, 2, 4));
 		
 		
 		this.theBiomeDecorator.treesPerChunk = 5;
 		this.theBiomeDecorator.grassPerChunk = 2;
 		
-		this.WorldTree = new WorldGenTree(false);
+		this.WorldTree = new WorldGenGeshTree(false);
 		//this.theBiomeDecorator.bigMushroomsPerChunk = 2;
 		
 		

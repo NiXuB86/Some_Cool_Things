@@ -2,8 +2,8 @@ package org.nixub86.SCT.Dimensions.Lush;
 
 import java.util.Random;
 
+import org.nixub86.SCT.Blocks.BlocksSCT;
 import org.nixub86.SCT.Items.ItemsSCT;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
@@ -38,7 +38,7 @@ public class BlockTP extends BlockPortal {
 		byte b0 = 0;
 		byte b1 = 1;
 		
-		if(world.getBlock(x - 1, y, z) == ItemsSCT.Ryda|| world.getBlock(x + 1, y, z) == ItemsSCT.Ryda){
+		if(world.getBlock(x - 1, y, z) == BlocksSCT.Ryda|| world.getBlock(x + 1, y, z) == BlocksSCT.Ryda){
 			b0 = 1;
 			b1 = 0;
 		}
@@ -48,7 +48,7 @@ public class BlockTP extends BlockPortal {
 		for(i1 = y; world.getBlock(x, i1 - 1, z) == this; --i1){
 			;
 		}
-		if(world.getBlock(x, i1 - 1, z) != ItemsSCT.Ryda){
+		if(world.getBlock(x, i1 - 1, z) != BlocksSCT.Ryda){
 			world.setBlockToAir(x, y, z);
 		}else{
 			int j1;
@@ -56,7 +56,7 @@ public class BlockTP extends BlockPortal {
 			for(j1 = 1; j1 < 4 && world.getBlock(x, i1 + j1, z) == this; ++j1){
 				;
 			}
-			if(j1 == 3 && world.getBlock(x, i1 + j1, z) == ItemsSCT.Ryda){
+			if(j1 == 3 && world.getBlock(x, i1 + j1, z) == BlocksSCT.Ryda){
 				boolean flag = world.getBlock(x - 1, y, z) == this || world.getBlock(x + 1, y, z) == this;
 				boolean flag1 = world.getBlock(x, y, z - 1) == this || world.getBlock(x, y, z - 1) == this;
 				
@@ -64,7 +64,7 @@ public class BlockTP extends BlockPortal {
 				{
 					world.setBlockToAir(x, y, z);
 				}else{
-					if((world.getBlock(x+b0, y, z+b1) != ItemsSCT.Ryda || world.getBlock(x-b0, y, z-b1) != this) && (world.getBlock(x-b0, y, z-b1) != ItemsSCT.Ryda || world.getBlock(x+b0, y, z+b1) != this)){
+					if((world.getBlock(x+b0, y, z+b1) != BlocksSCT.Ryda || world.getBlock(x-b0, y, z-b1) != this) && (world.getBlock(x-b0, y, z-b1) != BlocksSCT.Ryda || world.getBlock(x+b0, y, z+b1) != this)){
 						world.setBlockToAir(x, y, z);
 					}
 				}
@@ -105,11 +105,11 @@ public class BlockTP extends BlockPortal {
 	public boolean tryTroCreatePortal(World world, int x, int y, int z){
 		byte b0 = 0;
 		byte b1 = 0;
-		if(world.getBlock(x - 1 , y, z) == ItemsSCT.Ryda || world.getBlock(x + 1, y, z) == ItemsSCT.Ryda){
+		if(world.getBlock(x - 1 , y, z) == BlocksSCT.Ryda || world.getBlock(x + 1, y, z) == BlocksSCT.Ryda){
 			b0 = 1;
 		}
 		
-		if (world.getBlock(x, y, z - 1) == ItemsSCT.Ryda || world.getBlock(x, y, z + 1) == ItemsSCT.Ryda){
+		if (world.getBlock(x, y, z - 1) == BlocksSCT.Ryda || world.getBlock(x, y, z + 1) == BlocksSCT.Ryda){
 			b1 = 1;
 		}
 		
@@ -131,7 +131,7 @@ public class BlockTP extends BlockPortal {
 					if( l != -1 && l != 2 || i1 != -1 && i1 !=3){
 						Block j1 = world.getBlock(x + b0 * l, y + i1, z + b1 * l);
 								if(flag){
-									if(j1 != ItemsSCT.BlockTP){
+									if(j1 != BlocksSCT.BlockTP){
 										return false;
 									}
 								}
@@ -144,7 +144,7 @@ public class BlockTP extends BlockPortal {
 			for(l = 0; l < 2; ++l){
 				for(i1 = 0; i1 < 3; ++i1)
 				{
-					world.setBlock(x + b0 * l, y + i1, z + b1 * l, ItemsSCT.BlockTP, 0, 2);
+					world.setBlock(x + b0 * l, y + i1, z + b1 * l, BlocksSCT.BlockTP, 0, 2);
 				}
 			}
 			return true;

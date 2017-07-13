@@ -8,9 +8,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
-public class Bylishnik extends Block {
+public class LushCobblestone extends Block {
 
-	public Bylishnik(Material material) {
+	public LushCobblestone(Material material) {
 		super(material.rock);
 		
 		this.setCreativeTab(ItemsSCT.SCTTab);

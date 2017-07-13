@@ -1,5 +1,6 @@
 package org.nixub86.SCT;
 
+import org.nixub86.SCT.Blocks.BlocksSCT;
 import org.nixub86.SCT.Gases.GasesSCT;
 import org.nixub86.SCT.Items.ItemsSCT;
 
@@ -15,6 +16,7 @@ public class CommonProxy {
 	
 	public void init(FMLInitializationEvent e) {
 		ItemsSCT.Init();
+		BlocksSCT.Init();
 		RecipesSCT.Init();
 		GasesSCT.Init();
 	}

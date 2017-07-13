@@ -2,7 +2,7 @@ package org.nixub86.SCT.Cripy;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Cripy.Entity.EntityOpasnogoCripa;
+import org.nixub86.SCT.Cripy.Entity.EntityMuth;
 
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityList;
@@ -11,7 +11,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
-public class OpasniyCrip {
+public class MuthCrip {
 
 	public static void mainRegistry()
 	{
@@ -20,7 +20,7 @@ public class OpasniyCrip {
 	
 	public static void registerEntity()
 	{
-		createEntity(EntityOpasnogoCripa.class, "Opasniy Crip", 0x0004FF, 0xFF00E1);
+		createEntity(EntityMuth.class, "Opasniy Crip", 0x0004FF, 0xFF00E1);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColor, int spotColor)

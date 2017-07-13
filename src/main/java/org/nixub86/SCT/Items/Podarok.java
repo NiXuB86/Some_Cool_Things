@@ -20,7 +20,7 @@ public class Podarok extends Item {
 	{
 		this.setCreativeTab(ItemsSCT.SCTTab);
 		this.setUnlocalizedName("Podarok");
-		this.setTextureName("s");
+		this.setTextureName("sct:gift");
 		
 		i = random.nextInt(3);
 		

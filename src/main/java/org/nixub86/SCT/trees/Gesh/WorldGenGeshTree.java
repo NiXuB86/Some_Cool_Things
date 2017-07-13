@@ -1,7 +1,8 @@
-package org.nixub86.SCT.tree;
+package org.nixub86.SCT.trees.Gesh;
 
 import java.util.Random;
 
+import org.nixub86.SCT.Blocks.BlocksSCT;
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import cpw.mods.fml.common.IWorldGenerator;
@@ -15,24 +16,24 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.util.ForgeDirection;
 
-public class WorldGenTree extends WorldGenAbstractTree implements IWorldGenerator{
+public class WorldGenGeshTree extends WorldGenAbstractTree implements IWorldGenerator{
 
     private final int minTreeHeight;
     private final boolean vinesGrow;
     private static Block wood;
     private static Block leaves;
     
-    public WorldGenTree(boolean p_i2027_1_)
+    public WorldGenGeshTree(boolean p_i2027_1_)
     {
     	this(p_i2027_1_, 6, leaves, wood, false);
     }
 
-	public WorldGenTree(boolean p_i2028_1_, int minTreeHeight, Block metaWood, Block metaLeaves, boolean p_i2028_5_)
+	public WorldGenGeshTree(boolean p_i2028_1_, int minTreeHeight, Block metaWood, Block metaLeaves, boolean p_i2028_5_)
     {
         super(p_i2028_1_);
         this.minTreeHeight = minTreeHeight;
-        WorldGenTree.wood = metaWood;
-        WorldGenTree.leaves = metaLeaves;
+        WorldGenGeshTree.wood = metaWood;
+        WorldGenGeshTree.leaves = metaLeaves;
         this.vinesGrow = p_i2028_5_;
     }
 
@@ -90,7 +91,7 @@ public class WorldGenTree extends WorldGenAbstractTree implements IWorldGenerato
             {
                 Block block2 = p_76484_1_.getBlock(p_76484_3_, p_76484_4_ - 1, p_76484_5_);
 
-                boolean isSoil = block2.canSustainPlant(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, ForgeDirection.UP, (BlockSapling)ItemsSCT.sapl);
+                boolean isSoil = block2.canSustainPlant(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, ForgeDirection.UP, (BlockSapling)BlocksSCT.GeshSapling);
                 if (isSoil && p_76484_4_ < 256 - l - 1)
                 {
                     block2.onPlantGrow(p_76484_1_, p_76484_3_, p_76484_4_ - 1, p_76484_5_, p_76484_3_, p_76484_4_, p_76484_5_);
@@ -120,7 +121,7 @@ public class WorldGenTree extends WorldGenAbstractTree implements IWorldGenerato
 
                                     if (block1.isAir(p_76484_1_, i2, k1, k2) || block1.isLeaves(p_76484_1_, i2, k1, k2))
                                     {
-                                        this.setBlockAndNotifyAdequately(p_76484_1_, i2, k1, k2, ItemsSCT.leaves, 0);
+                                        this.setBlockAndNotifyAdequately(p_76484_1_, i2, k1, k2, BlocksSCT.GeshLeaves, 0);
                                     }
                                 }
                             }
@@ -133,7 +134,7 @@ public class WorldGenTree extends WorldGenAbstractTree implements IWorldGenerato
 
                         if (block.isAir(p_76484_1_, p_76484_3_, p_76484_4_ + k1, p_76484_5_) || block.isLeaves(p_76484_1_, p_76484_3_, p_76484_4_ + k1, p_76484_5_))
                         {
-                            this.setBlockAndNotifyAdequately(p_76484_1_, p_76484_3_, p_76484_4_ + k1, p_76484_5_, ItemsSCT.stvol, 0);
+                            this.setBlockAndNotifyAdequately(p_76484_1_, p_76484_3_, p_76484_4_ + k1, p_76484_5_, BlocksSCT.GeshWood, 0);
                         }
                     }
                 }
@@ -152,7 +153,7 @@ public class WorldGenTree extends WorldGenAbstractTree implements IWorldGenerato
 			int yCoord = random.nextInt(16);
 			int zCoord = chunkZ + random.nextInt(16);
 			
-			(new WorldGenTree(false, 6, leaves, wood, false)).generate(world, random, xCoord, yCoord, zCoord);
+			(new WorldGenGeshTree(false, 6, leaves, wood, false)).generate(world, random, xCoord, yCoord, zCoord);
 		}
 	}
 }

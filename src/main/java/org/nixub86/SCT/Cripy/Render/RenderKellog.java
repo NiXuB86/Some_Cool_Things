@@ -5,9 +5,9 @@ import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 
-public class RenderOpasnogoCripa extends RenderLiving{
-
-	public RenderOpasnogoCripa(ModelBase model, float shadowsize) 
+public class RenderKellog extends RenderLiving
+{
+	public RenderKellog(ModelBase model, float shadowsize) 
 	{
 		super(model, shadowsize);
 	}
@@ -15,7 +15,7 @@ public class RenderOpasnogoCripa extends RenderLiving{
 	@Override
 	protected ResourceLocation getEntityTexture(Entity entity) 
 	{
-		return new ResourceLocation("sct:entity/OpasniyCrip.png");
+		return new ResourceLocation("sct:entity/Kellog.png");
 	}
 
 }

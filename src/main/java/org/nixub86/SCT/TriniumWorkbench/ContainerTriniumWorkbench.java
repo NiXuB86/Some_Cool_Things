@@ -1,5 +1,6 @@
 package org.nixub86.SCT.TriniumWorkbench;
 
+import org.nixub86.SCT.Blocks.BlocksSCT;
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -84,7 +85,7 @@ public class ContainerTriniumWorkbench extends Container{
  
     public boolean canInteractWith(EntityPlayer entity)
     {
-        return this.worldObj.getBlock(this.posX, this.posY, this.posZ) != ItemsSCT.TriniumWorkbench? false : entity.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
+        return this.worldObj.getBlock(this.posX, this.posY, this.posZ) != BlocksSCT.TriniumWorkbench? false : entity.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
     }
  
     

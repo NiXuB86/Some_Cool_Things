@@ -1,4 +1,4 @@
-package org.nixub86.SCT.tree;
+package org.nixub86.SCT.trees.Gesh;
 
 import java.util.Random;
 
@@ -10,9 +10,9 @@ import net.minecraft.item.Item;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class stvolBlock extends Block {
+public class GeshWoodBlock extends Block {
 
-	public stvolBlock(Material p_i45394_1_) {
+	public GeshWoodBlock(Material p_i45394_1_) {
 		super(p_i45394_1_.wood);
 		
 		this.setCreativeTab(ItemsSCT.SCTTab);
