@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Cripy;
+package org.nixub86.SCT.Cripy.Entity;
 
 import org.nixub86.SCT.Items.ItemsSCT;
 

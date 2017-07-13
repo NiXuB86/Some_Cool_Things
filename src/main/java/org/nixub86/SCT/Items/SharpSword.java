@@ -9,7 +9,8 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Cripy.EntityKellog;
+import org.nixub86.SCT.Cripy.Entity.EntityKellog;
+
 
 public class SharpSword extends ItemSword {
 private World world;

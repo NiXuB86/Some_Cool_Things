@@ -2,6 +2,7 @@ package org.nixub86.SCT.Items;
 
 import org.nixub86.SCT.RecipesSCT;
 import org.nixub86.SCT.SCT;
+import org.nixub86.SCT.Armor.Armor;
 import org.nixub86.SCT.Blocks.BlockXyita;
 import org.nixub86.SCT.Blocks.Bylishnik;
 import org.nixub86.SCT.Blocks.Doski;
@@ -17,6 +18,8 @@ import org.nixub86.SCT.Dimensions.Lush.TP;
 import org.nixub86.SCT.Dimensions.Lush.TPBlock;
 import org.nixub86.SCT.Dimensions.Lush.WorldProviderLush;
 import org.nixub86.SCT.Dimensions.Lush.Biom.BiomeRegistry;
+import org.nixub86.SCT.Cripy.NormCrip;
+import org.nixub86.SCT.Cripy.OpasniyCrip;
 import org.nixub86.SCT.Gases.GasesSCT;
 import org.nixub86.SCT.TriniumWorkbench.GuiHandler;
 import org.nixub86.SCT.Utils.SaplingEvent;
@@ -36,6 +39,8 @@ import net.minecraft.block.BlockSapling;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -63,6 +68,14 @@ public class ItemsSCT extends Item{
 	
 	public static Item Podarok;
 	
+	public static ItemArmor armorhelmet;
+	public static ItemArmor armorplate;
+	public static ItemArmor armorpants;
+	public static ItemArmor armorboots;
+	
+	
+	public static ItemFood Food;
+	
 	public static Block Ryda;
 	public static Block TriniumWorkbench;
 	public static Block doski;
@@ -87,6 +100,16 @@ public class ItemsSCT extends Item{
 	//Please use this function for add items, do not create crutch
 	public static final void Init() 
 	{
+		armorhelmet = new Armor(0, 0);
+		armorplate = new Armor(0, 1);
+		armorpants = new Armor(0, 2);
+		armorboots = new Armor(0, 3);
+		
+		GameRegistry.registerItem(armorhelmet, "armorhelmet");
+		GameRegistry.registerItem(armorplate, "armorplate");
+		GameRegistry.registerItem(armorpants, "armorpants");
+		GameRegistry.registerItem(armorboots, "armorboots");
+		
 		triniumdust = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("triniumdust").setUnlocalizedName("Trinium dust");
 		GameRegistry.registerItem(triniumdust, "triniumdust");
 		
@@ -95,6 +118,9 @@ public class ItemsSCT extends Item{
 		
 		Podarok = new Podarok();
 		GameRegistry.registerItem(Podarok, "Podarok");
+		
+		Food = new Food(15,7, false);
+		GameRegistry.registerItem(Food, "Food");
 		
 		
 		leaves = new Leaves();
@@ -162,6 +188,8 @@ public class ItemsSCT extends Item{
 		NetworkRegistry.INSTANCE.registerGuiHandler(SCT.instance, new GuiHandler());
 		
 		Kellog.mainRegistry();
+		NormCrip.mainRegistry();
+		OpasniyCrip.mainRegistry();
 		DimensionRegistry.mainRegistry();
 		BiomeRegistry.mainRegsitry();
 	}

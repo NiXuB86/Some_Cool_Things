@@ -1,12 +1,9 @@
 package org.nixub86.SCT.Cripy;
 
-import java.util.ArrayList;
 import org.apache.commons.lang3.ArrayUtils;
 import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Cripy.Entity.EntityKellog;
-import org.nixub86.SCT.Dimensions.Lush.Biom.BiomLush;
-import com.google.common.base.Predicates;
-import com.google.common.collect.Iterators;
+import org.nixub86.SCT.Cripy.Entity.EntityNormCripa;
+
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
@@ -14,11 +11,8 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
+public class NormCrip {
 
-public class Kellog {
-	
-	//private BiomeGenBase spawnOnMir = new BiomOnMir(8);
-	
 	public static void mainRegistry()
 	{
 		registerEntity();
@@ -26,12 +20,11 @@ public class Kellog {
 	
 	public static void registerEntity()
 	{
-		createEntity(EntityKellog.class, "Kellog", 0x0004FF, 0xFF00E1);
+		createEntity(EntityNormCripa.class, "Norm Crip", 0x0010FF, 0xFF00E7);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColor, int spotColor)
 	{
-
 		BiomeGenBase[] biomes = new BiomeGenBase[0];
 		biomes = ArrayUtils.addAll(biomes, BiomeDictionary.getBiomesForType(Type.BEACH));
 		biomes = ArrayUtils.addAll(biomes, BiomeDictionary.getBiomesForType(Type.COLD));
@@ -56,7 +49,7 @@ public class Kellog {
 		EntityRegistry.registerGlobalEntityID(entityClass, entityName, randomId);
 		EntityRegistry.registerModEntity(entityClass, entityName, randomId, SCT.instance, 64, 1, true);
 		
-		EntityRegistry.addSpawn(entityClass, 25, 2, 4, EnumCreatureType.monster, biomes);
+		EntityRegistry.addSpawn(entityClass, 50, 2, 4, EnumCreatureType.creature, biomes);
 		
 		createEgg(randomId, solidColor, spotColor);
 		
@@ -67,4 +60,5 @@ public class Kellog {
 		EntityList.entityEggs.put(Integer.valueOf(randomId), new EntityList.EntityEggInfo(randomId, solidColor, spotColor));
 	}
 
+	
 }

@@ -1,8 +1,7 @@
 package org.nixub86.SCT.Items;
 
 import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Cripy.EntityKellog;
-
+import org.nixub86.SCT.Cripy.Entity.EntityKellog;
 
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLivingBase;

@@ -1,12 +1,9 @@
 package org.nixub86.SCT.Cripy;
 
-import java.util.ArrayList;
 import org.apache.commons.lang3.ArrayUtils;
 import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Cripy.Entity.EntityKellog;
-import org.nixub86.SCT.Dimensions.Lush.Biom.BiomLush;
-import com.google.common.base.Predicates;
-import com.google.common.collect.Iterators;
+import org.nixub86.SCT.Cripy.Entity.EntityOpasnogoCripa;
+
 import cpw.mods.fml.common.registry.EntityRegistry;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
@@ -14,11 +11,8 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
+public class OpasniyCrip {
 
-public class Kellog {
-	
-	//private BiomeGenBase spawnOnMir = new BiomOnMir(8);
-	
 	public static void mainRegistry()
 	{
 		registerEntity();
@@ -26,7 +20,7 @@ public class Kellog {
 	
 	public static void registerEntity()
 	{
-		createEntity(EntityKellog.class, "Kellog", 0x0004FF, 0xFF00E1);
+		createEntity(EntityOpasnogoCripa.class, "Opasniy Crip", 0x0004FF, 0xFF00E1);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColor, int spotColor)
