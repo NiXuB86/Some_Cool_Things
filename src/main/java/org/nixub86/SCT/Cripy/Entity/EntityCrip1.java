@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Cripy;
+package org.nixub86.SCT.Cripy.Entity;
 
 import org.nixub86.SCT.Items.ItemsSCT;
 
@@ -57,8 +57,8 @@ public class EntityCrip1 extends EntityMob
 	protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(1000.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(1.5D);
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setBaseValue(50.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.5D);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(500.0D);
         this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(10.0D);
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(1000);

@@ -9,7 +9,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Cripy.EntityCrip1;
+import org.nixub86.SCT.Cripy.Entity.EntityCrip1;
 
 public class SharpSword extends ItemSword {
 private World world;

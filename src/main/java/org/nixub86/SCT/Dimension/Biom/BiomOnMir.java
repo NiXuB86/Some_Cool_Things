@@ -2,7 +2,9 @@ package org.nixub86.SCT.Dimension.Biom;
 
 import java.util.Random;
 
-import org.nixub86.SCT.Cripy.EntityCrip1;
+import org.nixub86.SCT.Cripy.Entity.EntityCrip1;
+import org.nixub86.SCT.Cripy.Entity.EntityNormCripa;
+import org.nixub86.SCT.Cripy.Entity.EntityOpasnogoCripa;
 import org.nixub86.SCT.Dimension.WorldProviderMira;
 import org.nixub86.SCT.Items.ItemsSCT;
 import org.nixub86.SCT.tree.WorldGenTree;
@@ -29,8 +31,12 @@ public class BiomOnMir extends BiomeGenBase
 		
 		this.setDisableRain();
 		
+		
 		this.spawnableMonsterList.clear();
-		this.spawnableMonsterList.add(new SpawnListEntry(EntityCrip1.class, 10, 1, 3));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityCrip1.class, 30, 1, 3));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityOpasnogoCripa.class, 25, 2, 4));
+		
+		this.spawnableCreatureList.add(new SpawnListEntry(EntityNormCripa.class, 50, 2, 4));
 		
 		
 		this.theBiomeDecorator.treesPerChunk = 5;

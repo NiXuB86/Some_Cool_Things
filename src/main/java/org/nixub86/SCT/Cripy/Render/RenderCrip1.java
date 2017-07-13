@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Cripy;
+package org.nixub86.SCT.Cripy.Render;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
