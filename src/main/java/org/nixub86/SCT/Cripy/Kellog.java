@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Dimension.Biom.BiomOnMir;
+import org.nixub86.SCT.Dimensions.Lush.Biom.BiomLush;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterators;
@@ -17,7 +17,7 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 
 
-public class Crip1 {
+public class Kellog {
 	
 	//private BiomeGenBase spawnOnMir = new BiomOnMir(8);
 	
@@ -28,7 +28,7 @@ public class Crip1 {
 	
 	public static void registerEntity()
 	{
-		createEntity(EntityCrip1.class, "Mega Crip!!!!!! AAAAAAAAAA SYKA VSEM PISDA", 0x0004FF, 0xFF00E1);
+		createEntity(EntityKellog.class, "Kellog", 0x0004FF, 0xFF00E1);
 	}
 	
 	public static void createEntity(Class entityClass, String entityName, int solidColor, int spotColor)

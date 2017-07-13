@@ -8,15 +8,15 @@ import org.nixub86.SCT.Blocks.Doski;
 import org.nixub86.SCT.Blocks.Generaciya;
 import org.nixub86.SCT.Blocks.Ryda;
 import org.nixub86.SCT.Blocks.TriniumBlock;
-import org.nixub86.SCT.Blocks.Stone;
+import org.nixub86.SCT.Blocks.LushStone;
 import org.nixub86.SCT.Blocks.TriniumWorkbench;
-import org.nixub86.SCT.Cripy.Crip1;
-import org.nixub86.SCT.Dimension.BlockTP;
-import org.nixub86.SCT.Dimension.TPBlock;
-import org.nixub86.SCT.Dimension.DimensionRegistry;
-import org.nixub86.SCT.Dimension.TP;
-import org.nixub86.SCT.Dimension.WorldProviderMira;
-import org.nixub86.SCT.Dimension.Biom.BiomeRegistry;
+import org.nixub86.SCT.Cripy.Kellog;
+import org.nixub86.SCT.Dimensions.Lush.BlockTP;
+import org.nixub86.SCT.Dimensions.Lush.DimensionRegistry;
+import org.nixub86.SCT.Dimensions.Lush.TP;
+import org.nixub86.SCT.Dimensions.Lush.TPBlock;
+import org.nixub86.SCT.Dimensions.Lush.WorldProviderLush;
+import org.nixub86.SCT.Dimensions.Lush.Biom.BiomeRegistry;
 import org.nixub86.SCT.Gases.GasesSCT;
 import org.nixub86.SCT.TriniumWorkbench.GuiHandler;
 import org.nixub86.SCT.Utils.SaplingEvent;
@@ -70,7 +70,7 @@ public class ItemsSCT extends Item{
 	public static Block TriniumBlock;
 	
 	public static Block BlockTP;
-	public static Block stone;
+	public static Block LushStone;
 	public static Block byl;
 	public static Block TPBlock;
 	
@@ -117,8 +117,8 @@ public class ItemsSCT extends Item{
 		blockXyita = new BlockXyita(null);
 		GameRegistry.registerBlock(blockXyita, "BlockXyita");
 		
-		stone = new Stone(null);
-		GameRegistry.registerBlock(stone, "stone");
+		LushStone = new LushStone(null);
+		GameRegistry.registerBlock(LushStone, "LushStone");
 		
 		BlockTP = new BlockTP();
 		GameRegistry.registerBlock(BlockTP, "BlockTP");
@@ -161,7 +161,7 @@ public class ItemsSCT extends Item{
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(SCT.instance, new GuiHandler());
 		
-		Crip1.mainRegistry();
+		Kellog.mainRegistry();
 		DimensionRegistry.mainRegistry();
 		BiomeRegistry.mainRegsitry();
 	}

@@ -9,7 +9,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 import org.nixub86.SCT.SCT;
-import org.nixub86.SCT.Cripy.EntityCrip1;
+import org.nixub86.SCT.Cripy.EntityKellog;
 
 public class SharpSword extends ItemSword {
 private World world;
@@ -30,7 +30,7 @@ private World world;
 	{		
 		if(stack.getItem() == ItemsSCT.SharpSword)
 		{
-			if(entity instanceof EntityCrip1)
+			if(entity instanceof EntityKellog)
 			{
 				if(player.getActivePotionEffect(Potion.damageBoost) == null)
 				{

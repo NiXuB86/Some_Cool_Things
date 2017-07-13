@@ -30,10 +30,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeModContainer;
 
 
-public class EntityCrip1 extends EntityMob
+public class EntityKellog extends EntityMob
 {
 
-	public EntityCrip1(World world) 
+	public EntityKellog(World world) 
 	{
 		super(world);
         this.getNavigator().setBreakDoors(true);
@@ -61,13 +61,13 @@ public class EntityCrip1 extends EntityMob
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.2D);
         this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(350.0D);
         this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(5.0D);
-        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(100);
+        this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(250);
     }
 
 	
-	public EntityCrip1 createChild(EntityAgeable p_90011_1_) 
+	public EntityKellog createChild(EntityAgeable p_90011_1_) 
 	{
-		return new EntityCrip1(worldObj);
+		return new EntityKellog(worldObj);
 	}
 	
 	

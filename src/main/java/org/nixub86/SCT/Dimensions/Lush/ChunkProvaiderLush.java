@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Dimension;
+package org.nixub86.SCT.Dimensions.Lush;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.RAVINE;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 
-import org.nixub86.SCT.Dimension.Biom.BiomOnMir;
+import org.nixub86.SCT.Dimensions.Lush.Biom.BiomLush;
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import net.minecraft.block.Block;
@@ -44,7 +44,7 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 
-public class ChunkProvaiderOnMir implements IChunkProvider {
+public class ChunkProvaiderLush implements IChunkProvider {
 
 	private Random rand;
 
@@ -94,7 +94,7 @@ public class ChunkProvaiderOnMir implements IChunkProvider {
 		ravineGenerator = TerrainGen.getModdedMapGen(ravineGenerator, RAVINE);
 	}
 
-	public ChunkProvaiderOnMir(World world, long seed, boolean mapFeaturesEnabled)
+	public ChunkProvaiderLush(World world, long seed, boolean mapFeaturesEnabled)
 	{
 		this.worldObj = world;
 		this.mapFeaturesEnabled = mapFeaturesEnabled;
@@ -131,14 +131,14 @@ public class ChunkProvaiderOnMir implements IChunkProvider {
 	 * though the water is frozen if the temperature is low enough
 	 */
 	// TODO: generateTerrain?
-	public void func_147424_a(int par1, int par2, Block[] blocks) {
+	public void terrainGeneration(int par1, int par2, Block[] blocks) {
 		
 		//DONT EDIT THS METHOD UNLES YOU KNOW WHAT UR DOING OR MAKE A COPY INCASE U MESS IT UP....
 		//YOU HAVE BE WARNED !!!!!
 
 		byte b0 = 63;
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, par1 * 4 - 2, par2 * 4 - 2, 10, 10);
-		this.func_147423_a(par1 * 4, 0, par2 * 4);
+		this.initializeNoiseField(par1 * 4, 0, par2 * 4);
 		for (int k = 0; k < 4; ++k) {
 			int l = k * 5;
 			int i1 = (k + 1) * 5;
@@ -172,7 +172,7 @@ public class ChunkProvaiderOnMir implements IChunkProvider {
 							double d15 = d10 - d16;
 							for (int k3 = 0; k3 < 4; ++k3) {
 								if ((d15 += d16) > 0.0D) {
-									blocks[j3 += short1] = ItemsSCT.stone;//these can be set to custom blocks
+									blocks[j3 += short1] = ItemsSCT.LushStone;//these can be set to custom blocks
 								} else if (k2 * 8 + l2 < b0) {
 									blocks[j3 += short1] = Blocks.water;//these can be set to custom blocks
 								} else {
@@ -203,7 +203,7 @@ public class ChunkProvaiderOnMir implements IChunkProvider {
 		for (int k = 0; k < 16; ++k) {
 			for (int l = 0; l < 16; ++l) 
 			{
-				BiomOnMir biomegenbase = (BiomOnMir) par4ArrayOfBiomeGenBase[l + k * 16];
+				BiomLush biomegenbase = (BiomLush) par4ArrayOfBiomeGenBase[l + k * 16];
 				biomegenbase.genTerrainBlocks(this.worldObj, this.rand, blocks, par3ArrayOfByte, par1 * 16 + k, par2 * 16 + l, this.stoneNoise[l + k * 16]);
 			}
 		}
@@ -226,7 +226,7 @@ public class ChunkProvaiderOnMir implements IChunkProvider {
 		this.rand.setSeed((long)par1 * 341873128712L + (long)par2 * 132897987541L);
 		Block[] ablock = new Block[65536];
 		byte[] abyte = new byte[65536];
-		this.func_147424_a(par1, par2, ablock);
+		this.terrainGeneration(par1, par2, ablock);
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
 		this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
@@ -248,7 +248,7 @@ public class ChunkProvaiderOnMir implements IChunkProvider {
 	 * [empty] noise array, the position, and the size.
 	 */
 	// TODO: initializeNoiseField?
-	private void func_147423_a(int p_147423_1_, int p_147423_2_, int p_147423_3_) {
+	private void initializeNoiseField(int p_147423_1_, int p_147423_2_, int p_147423_3_) {
 
 		//DONT EDIT THS METHOD UNLES YOU KNOW WHAT UR DOING OR MAKE A COPY INCASE U MESS IT UP....
 		//YOU HAVE BE WARNED !!!!!

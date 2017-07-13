@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Dimension.Biom;
+package org.nixub86.SCT.Dimensions.Lush.Biom;
 
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
@@ -13,17 +13,17 @@ public class BiomeRegistry {
 		registerBiome();
 	}
 	
-	public static BiomeGenBase BiomVMire;
+	public static BiomeGenBase BiomInLush;
 	
 	public static void initializeBiome()
 	{
-		BiomVMire = new BiomOnMir(137).setBiomeName("BiomOnMir").setTemperatureRainfall(1.2F, 0.9F);
+		BiomInLush = new BiomLush(137).setBiomeName("BiomInLush").setTemperatureRainfall(1.2F, 0.9F);
 	}
 	
 	public static void registerBiome()
 	{
-		BiomeDictionary.registerBiomeType(BiomVMire, Type.FOREST);
-		BiomeManager.addSpawnBiome(BiomVMire);
+		BiomeDictionary.registerBiomeType(BiomInLush, Type.FOREST);
+		BiomeManager.addSpawnBiome(BiomInLush);
 		
 	}
 

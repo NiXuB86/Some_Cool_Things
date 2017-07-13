@@ -6,8 +6,8 @@ import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-import org.nixub86.SCT.Cripy.EntityCrip1;
-import org.nixub86.SCT.Cripy.RenderCrip1;
+import org.nixub86.SCT.Cripy.EntityKellog;
+import org.nixub86.SCT.Cripy.RenderKellog;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -21,14 +21,14 @@ public class ClientProxy extends CommonProxy {
 	
 	public void registerRenderers()
 	{
-		RenderingRegistry.registerEntityRenderingHandler(EntityCrip1.class, new RenderCrip1(new ModelBiped(), 0));
+		RenderingRegistry.registerEntityRenderingHandler(EntityKellog.class, new RenderKellog(new ModelBiped(), 0));
 	}
 	
 	public void registerEntities()
 	{
 		ModEntityID = EntityRegistry.findGlobalUniqueEntityId();
 
-		EntityRegistry.registerModEntity(EntityCrip1.class, "Mega Crip!!!!!! AAAAAAAAAA SYKA VSEM PISDA", ModEntityID++, SCT.instance, 80, 1, false);
+		EntityRegistry.registerModEntity(EntityKellog.class, "Mega Crip!!!!!! AAAAAAAAAA SYKA VSEM PISDA", ModEntityID++, SCT.instance, 80, 1, false);
 	}
 	
 	@Override

@@ -1,4 +1,4 @@
-package org.nixub86.SCT.Dimension;
+package org.nixub86.SCT.Dimensions.Lush;
 
 import org.nixub86.SCT.Items.ItemsSCT;
 
@@ -31,8 +31,8 @@ public class TPBlock extends Block {
 			
 			MinecraftServer server = MinecraftServer.getServer();
 			if(player instanceof EntityPlayerMP){
-				if(thePlayer.dimension != DimensionRegistry.dimensionId){
-					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, DimensionRegistry.dimensionId, new TP(server.worldServerForDimension(DimensionRegistry.dimensionId)));
+				if(thePlayer.dimension != DimensionRegistry.LushId){
+					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, DimensionRegistry.LushId, new TP(server.worldServerForDimension(DimensionRegistry.LushId)));
 				}else{
 					thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new TP(server.worldServerForDimension(0)));
 				}
