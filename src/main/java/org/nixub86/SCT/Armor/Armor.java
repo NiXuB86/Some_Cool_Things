@@ -26,7 +26,6 @@ public class Armor extends ItemArmor {
         	this.setUnlocalizedName("pants");
         if(armorType == 3)
         	this.setUnlocalizedName("boots");
-        
 	}
 		
 	public void setTextureName ()
