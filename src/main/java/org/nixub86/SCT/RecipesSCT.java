@@ -15,7 +15,7 @@ public class RecipesSCT {
 	public static final void Init() 
 	{
 		GameRegistry.addSmelting(ItemsSCT.triniumdust, new ItemStack(ItemsSCT.triniumingot, 1), 1F);
-		GameRegistry.addSmelting(BlocksSCT.Ryda, new ItemStack(ItemsSCT.triniumingot, 1), 1F);
+		GameRegistry.addSmelting(BlocksSCT.TriniumOre, new ItemStack(ItemsSCT.triniumingot, 1), 1F);
 		
 		GameRegistry.addRecipe(new ItemStack(BlocksSCT.TriniumWorkbench, 1), 
 		        new Object[]{ "IAI", "AIA", "IAI",

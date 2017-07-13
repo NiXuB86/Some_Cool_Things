@@ -42,7 +42,7 @@ public class Generaciya implements IWorldGenerator{
     
     private void generateMir(World world, Random random, int x, int z) 
     {
-            this.addOreSpawn(BlocksSCT.Ryda, world, random, x, z, 16, 16, 4 + random.nextInt(3), 10, 15, 50);
+            this.addOreSpawn(BlocksSCT.TriniumOre, world, random, x, z, 16, 16, 4 + random.nextInt(3), 10, 15, 50);
     }
 
     private void generateNether(World world, Random random, int x, int z)

@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 public class GuiTriniumWorkbench extends GuiContainer
 {
-	private static final ResourceLocation TextureWorkbench = new ResourceLocation("guiTriniumWorkbench.png");
+	private static final ResourceLocation TextureWorkbench = new ResourceLocation("sct:textures/gui/GuiTriniumWorkbench.png");
 	 
     public GuiTriniumWorkbench(InventoryPlayer inventory, World world, int par3, int par4, int par5)
     {

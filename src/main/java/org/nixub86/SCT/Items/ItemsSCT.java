@@ -7,7 +7,7 @@ import org.nixub86.SCT.Blocks.BlockXyita;
 import org.nixub86.SCT.Blocks.LushCobblestone;
 import org.nixub86.SCT.Blocks.GeshPlanks;
 import org.nixub86.SCT.Blocks.Generaciya;
-import org.nixub86.SCT.Blocks.Ryda;
+import org.nixub86.SCT.Blocks.TriniumOre;
 import org.nixub86.SCT.Blocks.TriniumBlock;
 import org.nixub86.SCT.Blocks.LushStone;
 import org.nixub86.SCT.Blocks.TriniumWorkbench;

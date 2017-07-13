@@ -1,0 +1,16 @@
+[
+{
+  "modid": "some_cool_things",
+  "name": "Some Cool Things",
+  "description": "SCT adds a some cool things",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["NiXuB86"], ["mailshamail"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

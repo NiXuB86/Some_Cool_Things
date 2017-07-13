@@ -56,5 +56,5 @@ public class BiomLush extends BiomeGenBase
 	public WorldGenAbstractTree func_150567_a(Random random)
     {
 		return (WorldGenAbstractTree)(random.nextInt(5) == 0 ? this.worldGeneratorSwamp : (random.nextInt(10) == 0 ? this.WorldTree : this.worldGeneratorTrees));
-    }	
+    }
 }

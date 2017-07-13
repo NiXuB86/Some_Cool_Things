@@ -38,7 +38,7 @@ public class BlockTP extends BlockPortal {
 		byte b0 = 0;
 		byte b1 = 1;
 		
-		if(world.getBlock(x - 1, y, z) == BlocksSCT.Ryda|| world.getBlock(x + 1, y, z) == BlocksSCT.Ryda){
+		if(world.getBlock(x - 1, y, z) == BlocksSCT.TriniumOre|| world.getBlock(x + 1, y, z) == BlocksSCT.TriniumOre){
 			b0 = 1;
 			b1 = 0;
 		}
@@ -48,7 +48,7 @@ public class BlockTP extends BlockPortal {
 		for(i1 = y; world.getBlock(x, i1 - 1, z) == this; --i1){
 			;
 		}
-		if(world.getBlock(x, i1 - 1, z) != BlocksSCT.Ryda){
+		if(world.getBlock(x, i1 - 1, z) != BlocksSCT.TriniumOre){
 			world.setBlockToAir(x, y, z);
 		}else{
 			int j1;
@@ -56,7 +56,7 @@ public class BlockTP extends BlockPortal {
 			for(j1 = 1; j1 < 4 && world.getBlock(x, i1 + j1, z) == this; ++j1){
 				;
 			}
-			if(j1 == 3 && world.getBlock(x, i1 + j1, z) == BlocksSCT.Ryda){
+			if(j1 == 3 && world.getBlock(x, i1 + j1, z) == BlocksSCT.TriniumOre){
 				boolean flag = world.getBlock(x - 1, y, z) == this || world.getBlock(x + 1, y, z) == this;
 				boolean flag1 = world.getBlock(x, y, z - 1) == this || world.getBlock(x, y, z - 1) == this;
 				
@@ -64,7 +64,7 @@ public class BlockTP extends BlockPortal {
 				{
 					world.setBlockToAir(x, y, z);
 				}else{
-					if((world.getBlock(x+b0, y, z+b1) != BlocksSCT.Ryda || world.getBlock(x-b0, y, z-b1) != this) && (world.getBlock(x-b0, y, z-b1) != BlocksSCT.Ryda || world.getBlock(x+b0, y, z+b1) != this)){
+					if((world.getBlock(x+b0, y, z+b1) != BlocksSCT.TriniumOre || world.getBlock(x-b0, y, z-b1) != this) && (world.getBlock(x-b0, y, z-b1) != BlocksSCT.TriniumOre || world.getBlock(x+b0, y, z+b1) != this)){
 						world.setBlockToAir(x, y, z);
 					}
 				}
@@ -105,11 +105,11 @@ public class BlockTP extends BlockPortal {
 	public boolean tryTroCreatePortal(World world, int x, int y, int z){
 		byte b0 = 0;
 		byte b1 = 0;
-		if(world.getBlock(x - 1 , y, z) == BlocksSCT.Ryda || world.getBlock(x + 1, y, z) == BlocksSCT.Ryda){
+		if(world.getBlock(x - 1 , y, z) == BlocksSCT.TriniumOre || world.getBlock(x + 1, y, z) == BlocksSCT.TriniumOre){
 			b0 = 1;
 		}
 		
-		if (world.getBlock(x, y, z - 1) == BlocksSCT.Ryda || world.getBlock(x, y, z + 1) == BlocksSCT.Ryda){
+		if (world.getBlock(x, y, z - 1) == BlocksSCT.TriniumOre || world.getBlock(x, y, z + 1) == BlocksSCT.TriniumOre){
 			b1 = 1;
 		}
 		

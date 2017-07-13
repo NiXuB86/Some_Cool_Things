@@ -9,14 +9,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPickaxe;
 
-public class Ryda extends Block {
+public class TriniumOre extends Block {
 
-	public Ryda(Material material) {
+	public TriniumOre(Material material) {
 		super(material.rock);
 		
-		this.setBlockName("Ryda");
+		this.setBlockName("TriniumOre");
 		this.setCreativeTab(ItemsSCT.SCTTab);
-		this.setBlockTextureName("");
+		this.setBlockTextureName("sct:TriniumOre");
 		this.setHardness(5f);
 		this.setResistance(10F);
 		this.setHarvestLevel("pickaxe", 2);
@@ -25,6 +25,6 @@ public class Ryda extends Block {
 		
 	public Item getItemDropped(int par1, Random random, int par3) 
 	{
-		return Item.getItemFromBlock(BlocksSCT.Ryda);
+		return Item.getItemFromBlock(BlocksSCT.TriniumOre);
 	}
 }

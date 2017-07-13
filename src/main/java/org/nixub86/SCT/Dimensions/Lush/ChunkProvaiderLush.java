@@ -46,7 +46,8 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 
 public class ChunkProvaiderLush implements IChunkProvider {
-
+	
+	/** RNG. */
 	private Random rand;
 
 	/** A NoiseGeneratorOctaves used in generating terrain */
@@ -85,6 +86,7 @@ public class ChunkProvaiderLush implements IChunkProvider {
 	/** A double array that hold terrain noise */
 	double[] noise3;
 	double[] noise1;
+
 	double[] noise2;
 	double[] noise5;
 	int[][] field_73219_j = new int[32][32];
@@ -131,15 +133,14 @@ public class ChunkProvaiderLush implements IChunkProvider {
 	 * Generates the shape of the terrain for the chunk though its all stone
 	 * though the water is frozen if the temperature is low enough
 	 */
-	// TODO: generateTerrain?
-	public void terrainGeneration(int par1, int par2, Block[] blocks) {
-		
-		//DONT EDIT THS METHOD UNLES YOU KNOW WHAT UR DOING OR MAKE A COPY INCASE U MESS IT UP....
-		//YOU HAVE BE WARNED !!!!!
+	
+	
+	
+	public void func_147424_a(int par1, int par2, Block[] blocks) {	
 
 		byte b0 = 63;
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, par1 * 4 - 2, par2 * 4 - 2, 10, 10);
-		this.initializeNoiseField(par1 * 4, 0, par2 * 4);
+		this.func_147423_a(par1 * 4, 0, par2 * 4);
 		for (int k = 0; k < 4; ++k) {
 			int l = k * 5;
 			int i1 = (k + 1) * 5;
@@ -194,7 +195,7 @@ public class ChunkProvaiderLush implements IChunkProvider {
 	}
 
 	public void replaceBlocksForBiome(int par1, int par2, Block[] blocks, byte[] par3ArrayOfByte, BiomeGenBase[] par4ArrayOfBiomeGenBase) {
-		
+
 		@SuppressWarnings("deprecation")
 		ChunkProviderEvent.ReplaceBiomeBlocks event = new ChunkProviderEvent.ReplaceBiomeBlocks(this, par1, par2, blocks, par3ArrayOfByte, par4ArrayOfBiomeGenBase);
 		MinecraftForge.EVENT_BUS.post(event);
@@ -227,7 +228,7 @@ public class ChunkProvaiderLush implements IChunkProvider {
 		this.rand.setSeed((long)par1 * 341873128712L + (long)par2 * 132897987541L);
 		Block[] ablock = new Block[65536];
 		byte[] abyte = new byte[65536];
-		this.terrainGeneration(par1, par2, ablock);
+		this.func_147424_a(par1, par2, ablock);
 		this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, par1 * 16, par2 * 16, 16, 16);
 		this.replaceBlocksForBiome(par1, par2, ablock, abyte, this.biomesForGeneration);
 		this.caveGenerator.func_151539_a(this, this.worldObj, par1, par2, ablock);
@@ -248,11 +249,8 @@ public class ChunkProvaiderLush implements IChunkProvider {
 	 * generates a subset of the level's terrain data. Takes 7 arguments: the
 	 * [empty] noise array, the position, and the size.
 	 */
-	// TODO: initializeNoiseField?
-	private void initializeNoiseField(int p_147423_1_, int p_147423_2_, int p_147423_3_) {
 
-		//DONT EDIT THS METHOD UNLES YOU KNOW WHAT UR DOING OR MAKE A COPY INCASE U MESS IT UP....
-		//YOU HAVE BE WARNED !!!!!
+	private void func_147423_a(int p_147423_1_, int p_147423_2_, int p_147423_3_) {
 
 		this.noise5 = this.noiseGen6.generateNoiseOctaves(this.noise5, p_147423_1_, p_147423_3_, 5, 5, 200.0D, 200.0D, 0.5D);
 		this.noise3 = this.noiseGen3.generateNoiseOctaves(this.noise3, p_147423_1_, p_147423_2_, p_147423_3_, 5, 33, 5, 8.555150000000001D, 4.277575000000001D, 8.555150000000001D);
@@ -483,8 +481,14 @@ public class ChunkProvaiderLush implements IChunkProvider {
 		}
 	}
 
+	/**
+	 * Returns the location of the closest structure of the specified type. If
+	 * not found returns null.
+	 */
 	@Override
-	public ChunkPosition func_147416_a(World world, String arg1, int arg2, int arg3, int arg4) {
+	// TODO: findClosestStructure
+	public ChunkPosition func_147416_a(World world, String arg1, int arg2, int arg3, int arg4) 
+	{
 		return null;
 	}
 }

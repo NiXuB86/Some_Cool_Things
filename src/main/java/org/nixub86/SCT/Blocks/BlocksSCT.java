@@ -12,7 +12,7 @@ import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockSapling;
 
 public class BlocksSCT {
-	public static Block Ryda;
+	public static Block TriniumOre;
 	public static Block TriniumWorkbench;
 	public static Block GeshPlanks;
 	public static Block blockXyita;
@@ -60,8 +60,8 @@ public class BlocksSCT {
 		TriniumWorkbench = new TriniumWorkbench(null);
 		GameRegistry.registerBlock(TriniumWorkbench, "TriniumWorkbench");
 		
-		Ryda = new Ryda(null);
-		GameRegistry.registerBlock(Ryda, "Ryda");
+		TriniumOre = new TriniumOre(null);
+		GameRegistry.registerBlock(TriniumOre, "TriniumOre");
 		
 		TriniumBlock = new TriniumBlock(null);
 		GameRegistry.registerBlock(TriniumBlock, "TriniumBlock");
