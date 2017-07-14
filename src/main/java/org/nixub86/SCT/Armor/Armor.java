@@ -2,10 +2,13 @@ package org.nixub86.SCT.Armor;
 
 import org.nixub86.SCT.Items.ItemsSCT;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
 public class Armor extends ItemArmor {
 
@@ -43,5 +46,4 @@ public class Armor extends ItemArmor {
 	 {
              return this.texturePath;
      }
-	
 }

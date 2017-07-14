@@ -20,6 +20,7 @@ import org.nixub86.SCT.Dimensions.Lush.WorldProviderLush;
 import org.nixub86.SCT.Dimensions.Lush.Biom.BiomeRegistry;
 import org.nixub86.SCT.Cripy.Mush;
 import org.nixub86.SCT.Cripy.MuthCrip;
+import org.nixub86.SCT.Cripy.SuperCreeper;
 import org.nixub86.SCT.Gases.GasesSCT;
 import org.nixub86.SCT.TriniumWorkbench.GuiHandler;
 import org.nixub86.SCT.Utils.SaplingEvent;
@@ -141,6 +142,7 @@ public class ItemsSCT extends Item{
 		Kellog.mainRegistry();
 		Mush.mainRegistry();
 		MuthCrip.mainRegistry();
+		SuperCreeper.mainRegistry();
 		DimensionRegistry.mainRegistry();
 		BiomeRegistry.mainRegsitry();
 	}

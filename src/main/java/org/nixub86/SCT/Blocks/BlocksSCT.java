@@ -27,7 +27,13 @@ public class BlocksSCT {
 	public static BlockLeaves GeshLeaves;
 	public static BlockSapling GeshSapling;
 	
+	public static Block SuperTNT;
+	
 	public static final void Init() {
+		
+		SuperTNT = new SuperTNT();
+		GameRegistry.registerBlock(SuperTNT, "SuperTNT");
+		
 		GeshLeaves = new GeshLeaves();
 		GameRegistry.registerBlock(GeshLeaves, "GeshLeaves");
 		
