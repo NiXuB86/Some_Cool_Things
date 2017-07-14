@@ -11,6 +11,7 @@ import org.nixub86.SCT.Blocks.TriniumOre;
 import org.nixub86.SCT.Blocks.TriniumBlock;
 import org.nixub86.SCT.Blocks.LushStone;
 import org.nixub86.SCT.Blocks.TriniumWorkbench;
+import org.nixub86.SCT.Cripy.CripFlyR;
 import org.nixub86.SCT.Cripy.Kellog;
 import org.nixub86.SCT.Dimensions.Lush.BlockTP;
 import org.nixub86.SCT.Dimensions.Lush.DimensionRegistry;
@@ -143,6 +144,7 @@ public class ItemsSCT extends Item{
 		Mush.mainRegistry();
 		MuthCrip.mainRegistry();
 		SuperCreeper.mainRegistry();
+		CripFlyR.mainRegistry();
 		DimensionRegistry.mainRegistry();
 		BiomeRegistry.mainRegsitry();
 	}

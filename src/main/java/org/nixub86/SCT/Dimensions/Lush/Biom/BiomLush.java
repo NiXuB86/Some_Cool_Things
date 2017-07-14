@@ -2,6 +2,7 @@ package org.nixub86.SCT.Dimensions.Lush.Biom;
 
 import java.util.Random;
 import org.nixub86.SCT.Dimensions.Lush.WorldProviderLush;
+import org.nixub86.SCT.Cripy.Entity.EntityCripFlyR;
 import org.nixub86.SCT.Cripy.Entity.EntityKellog;
 import org.nixub86.SCT.Cripy.Entity.EntityMush;
 import org.nixub86.SCT.Cripy.Entity.EntityMuth;
@@ -35,6 +36,8 @@ public class BiomLush extends BiomeGenBase
 		this.spawnableMonsterList.clear();
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityKellog.class, 30, 1, 3));
 		this.spawnableMonsterList.add(new SpawnListEntry(EntityMuth.class, 25, 2, 4));
+		this.spawnableMonsterList.add(new SpawnListEntry(EntityCripFlyR.class, 25, 2, 4));
+		
 		
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityMush.class, 50, 2, 4));
 		this.spawnableMonsterList.add(new SpawnListEntry(SuperCreeperEntity.class, 30, 1, 3));

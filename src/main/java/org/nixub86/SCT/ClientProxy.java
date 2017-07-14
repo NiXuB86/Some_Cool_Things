@@ -6,10 +6,12 @@ import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
+import org.nixub86.SCT.Cripy.Entity.EntityCripFlyR;
 import org.nixub86.SCT.Cripy.Entity.EntityKellog;
 import org.nixub86.SCT.Cripy.Entity.EntityMush;
 import org.nixub86.SCT.Cripy.Entity.EntityMuth;
 import org.nixub86.SCT.Cripy.Entity.SuperCreeperEntity;
+import org.nixub86.SCT.Cripy.Render.RenderFlyR;
 import org.nixub86.SCT.Cripy.Render.RenderKellog;
 import org.nixub86.SCT.Cripy.Render.RenderMush;
 import org.nixub86.SCT.Cripy.Render.RenderSuperCreeper;
@@ -30,6 +32,7 @@ public class ClientProxy extends CommonProxy {
 		RenderingRegistry.registerEntityRenderingHandler(EntityMush.class, new RenderMush(new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(EntityMuth.class, new RenderMush(new ModelBiped(), 0));
 		RenderingRegistry.registerEntityRenderingHandler(SuperCreeperEntity.class, new RenderSuperCreeper(new ModelBiped(), 0));
+		RenderingRegistry.registerEntityRenderingHandler(EntityCripFlyR.class, new RenderFlyR(new ModelBiped(), 0));
 	}
 	
 	public void registerEntities()
@@ -39,6 +42,8 @@ public class ClientProxy extends CommonProxy {
 		EntityRegistry.registerModEntity(EntityMush.class, "Norm Crip", ModEntityID++, SCT.instance, 80, 1, false);
 		EntityRegistry.registerModEntity(EntityMuth.class, "OpasniyCrip", ModEntityID++, SCT.instance, 80, 1, false);
 		EntityRegistry.registerModEntity(SuperCreeperEntity.class, "OpasniyCrip", ModEntityID++, SCT.instance, 80, 1, false);
+		EntityRegistry.registerModEntity(EntityCripFlyR.class, "OpasniyCrip", ModEntityID++, SCT.instance, 80, 1, false);
+
 	}
 	
 	@Override
