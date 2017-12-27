@@ -56,14 +56,14 @@ public class Command implements ICommand{
 
 	@Override
 	public boolean canCommandSenderUseCommand(ICommandSender p_71519_1_) {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_) {
-		// TODO Auto-generated method stub
-		return null;
+		ListCommand.add("rep");
+		ListCommand.add("like");
+		return ListCommand;
 	}
 
 	@Override

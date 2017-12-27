@@ -3,6 +3,7 @@ package org.nixub86.SCT;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
+import org.nixub86.SCT.CommandReportAndLike.CommandLike;
 import org.nixub86.SCT.CommandReportAndLike.CommandReport;
 import org.nixub86.SCT.Items.ItemsSCT;
 
@@ -47,6 +48,7 @@ public class SCT {
 	public void postInit(FMLServerStartingEvent e) 
 	{
 		e.registerServerCommand(new CommandReport());
+		e.registerServerCommand(new CommandLike());
 	}
 	
 	

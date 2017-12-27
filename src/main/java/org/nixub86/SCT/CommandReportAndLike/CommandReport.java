@@ -37,6 +37,9 @@ public class CommandReport extends Command{
 	@Override
 	public void processCommand(ICommandSender sender, String[] p_71515_2_) {
 		
+		Karma -= 2;
+		System.out.println(Karma);
+		
 		if(sender instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) sender;
 			
@@ -48,17 +51,6 @@ public class CommandReport extends Command{
 				player.addChatMessage(new ChatComponentTranslation("Киньте этому дауну побольше репортов, пожалуйста" + ": " + Karma));
 			}
 		}
-		
-		Karma -= 2;
-		System.out.println(Karma);
-		
-	}
-
-	@Override
-	public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_) {
-		
-		ListCommand.add("rep");
-		return ListCommand;
 	}
 	
 	@Override

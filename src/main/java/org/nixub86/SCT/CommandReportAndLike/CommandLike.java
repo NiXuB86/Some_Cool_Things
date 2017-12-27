@@ -4,42 +4,51 @@ import java.util.List;
 
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.ChatComponentTranslation;
 
-public class CommandLike extends Command{
-	
+public class CommandLike extends Command
+{
+	@Override
+	public int compareTo(Object arg0) {
+		return 0;
+	}
+
+	@Override
+	public String getCommandName() {
+		return nameCommnadLike;
+	}
+
 	@Override
 	public String getCommandUsage(ICommandSender p_71518_1_) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return "/like";
 	}
-
+	
 	@Override
 	public List getCommandAliases() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.ListCommand;
 	}
-
+	
 	@Override
-	public void processCommand(ICommandSender p_71515_1_, String[] p_71515_2_) {
-		// TODO Auto-generated method stub
+	public void processCommand(ICommandSender sender, String[] p_71515_2_) 
+	{
+		Like -= 2;
+		System.out.println(Like);
+		
+		if(sender instanceof EntityPlayer){
+			EntityPlayer player = (EntityPlayer) sender;
+			
+			if(Like > 10){
+				player.addChatMessage(new ChatComponentTranslation("10"));
+			}
+		
+			if(Like < 0){
+				player.addChatMessage(new ChatComponentTranslation("Киньте этому дауну побольше репортов, пожалуйста" + ": " + Karma));
+			}
+		}
 	}
-
-	@Override
-	public boolean canCommandSenderUseCommand(ICommandSender p_71519_1_) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean isUsernameIndex(String[] p_82358_1_, int p_82358_2_) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	
+	
 }
