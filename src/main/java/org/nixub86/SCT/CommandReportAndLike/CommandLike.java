@@ -2,9 +2,12 @@ package org.nixub86.SCT.CommandReportAndLike;
 
 import java.util.List;
 
+import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentTranslation;
 
 public class CommandLike extends Command
@@ -37,10 +40,22 @@ public class CommandLike extends Command
 		Like += 1;
 		System.out.println(Like);
 		
-		if(sender instanceof EntityPlayer){
-			EntityPlayer player = (EntityPlayer) sender;
-			
-			player.addChatMessage(new ChatComponentTranslation("Like: " + Like));
-			}
-		}
+		EntityPlayerMP entityplayermp = getPlayer(sender, p_71515_2_[0]);
+		
+		String s = entityplayermp.getCommandSenderName();
+		
+		entityplayermp.addChatMessage(new ChatComponentTranslation("Игноку"  + " " + s + " " + "поставили  лайк"));
+		entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " " + Like + " " + "лайков"));
+	}
+	
+	public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_)
+    {
+        return (List) (p_71516_2_.length == 1 ? CommandBase.getListOfStringsMatchingLastWord(p_71516_2_, this.getPlayers()) : (p_71516_2_.length == 2));
+    }
+
+    private String[] getPlayers()
+    {
+        return MinecraftServer.getServer().getAllUsernames();
+    }
+	
 	}

@@ -5,6 +5,10 @@ import java.util.List;
 
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
+import net.minecraft.command.PlayerNotFoundException;
+import net.minecraft.command.PlayerSelector;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.server.MinecraftServer;
 
 public class Command implements ICommand{
 
@@ -68,7 +72,7 @@ public class Command implements ICommand{
 	public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_) {
 		ListCommand.add("rep");
 		ListCommand.add("like");
-		ListCommand.add("Info");
+		ListCommand.add("info");
 		return ListCommand;
 	}
 
@@ -77,5 +81,28 @@ public class Command implements ICommand{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	public EntityPlayerMP getPlayer(ICommandSender p_82359_0_, String p_82359_1_)
+    {
+        EntityPlayerMP entityplayermp = PlayerSelector.matchOnePlayer(p_82359_0_, p_82359_1_);
+
+        if (entityplayermp != null)
+        {
+            return entityplayermp;
+        }
+        else
+        {
+            entityplayermp = MinecraftServer.getServer().getConfigurationManager().func_152612_a(p_82359_1_);
+
+            if (entityplayermp == null)
+            {
+                throw new PlayerNotFoundException();
+            }
+            else
+            {
+                return entityplayermp;
+            }
+        }
+    }
 
 }
