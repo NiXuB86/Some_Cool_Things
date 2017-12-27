@@ -34,21 +34,13 @@ public class CommandLike extends Command
 	@Override
 	public void processCommand(ICommandSender sender, String[] p_71515_2_) 
 	{
-		Like -= 2;
+		Like += 1;
 		System.out.println(Like);
 		
 		if(sender instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) sender;
 			
-			if(Like > 10){
-				player.addChatMessage(new ChatComponentTranslation("10"));
-			}
-		
-			if(Like < 0){
-				player.addChatMessage(new ChatComponentTranslation("Киньте этому дауну побольше репортов, пожалуйста" + ": " + Karma));
+			player.addChatMessage(new ChatComponentTranslation("Like: " + Like));
 			}
 		}
 	}
-	
-	
-}

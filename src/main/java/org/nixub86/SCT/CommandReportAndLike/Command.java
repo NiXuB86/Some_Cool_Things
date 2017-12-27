@@ -8,20 +8,25 @@ import net.minecraft.command.ICommandSender;
 
 public class Command implements ICommand{
 
-	int Karma, Like;
+	int Report, Like, Repytachiya;
 	
 	protected final List ListCommand;
 	
-	protected String nameCommandReport, nameCommnadLike;
+	protected String nameCommandReport, nameCommnadLike, nameCommnadInfo;
+	
+	
 	
 	public Command()
 	{
 		ListCommand = new ArrayList(); 
-		Karma = 10;
-		Like = 0;
+		//Report = 0;
+		//Like = 0;
+		
+		Repytachiya = Like - Report;
 		
 		nameCommandReport = "rep";
 		nameCommnadLike = "like";
+		nameCommnadInfo = "information";
 	}
 	
 	@Override
@@ -63,6 +68,7 @@ public class Command implements ICommand{
 	public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_) {
 		ListCommand.add("rep");
 		ListCommand.add("like");
+		ListCommand.add("Info");
 		return ListCommand;
 	}
 

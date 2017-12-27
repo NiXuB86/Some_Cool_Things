@@ -5,6 +5,7 @@ import net.minecraftforge.common.util.EnumHelper;
 
 import org.nixub86.SCT.CommandReportAndLike.CommandLike;
 import org.nixub86.SCT.CommandReportAndLike.CommandReport;
+import org.nixub86.SCT.CommandReportAndLike.Info;
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import cpw.mods.fml.common.Mod;
@@ -49,6 +50,7 @@ public class SCT {
 	{
 		e.registerServerCommand(new CommandReport());
 		e.registerServerCommand(new CommandLike());
+		e.registerServerCommand(new Info());
 	}
 	
 	

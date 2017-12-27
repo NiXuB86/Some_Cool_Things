@@ -37,18 +37,17 @@ public class CommandReport extends Command{
 	@Override
 	public void processCommand(ICommandSender sender, String[] p_71515_2_) {
 		
-		Karma -= 2;
-		System.out.println(Karma);
+		Report -= 2;
+		System.out.println(Report);
 		
 		if(sender instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) sender;
-			
-			if(Karma > 10){
-				player.addChatMessage(new ChatComponentTranslation("10"));
-			}
 		
-			if(Karma < 0){
-				player.addChatMessage(new ChatComponentTranslation("Киньте этому дауну побольше репортов, пожалуйста" + ": " + Karma));
+			player.addChatMessage(new ChatComponentTranslation(": " + Report));
+			
+			if(Report < 0){
+				player.addChatMessage(new ChatComponentTranslation("Киньте этому дауну побольше репортов, пожалуйста" + ": " + Report));
+
 			}
 		}
 	}
