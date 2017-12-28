@@ -44,7 +44,7 @@ public class CommandLike extends Command
 		String s = entityplayermp.getCommandSenderName();
 		
 		if(s == null)
-		{
+		{	
 			entityplayermp.addChatMessage(new ChatComponentTranslation("Ник"));
 		}else
 		{

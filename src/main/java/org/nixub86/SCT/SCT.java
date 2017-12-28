@@ -42,7 +42,7 @@ public class SCT {
 		proxy.preInit(e);
 		
 		network = NetworkRegistry.INSTANCE.newSimpleChannel(SCT.MODID);
-		//network.registerMessage(MessageReport.Handler.class, MessageReport.class, 0, Side.CLIENT);
+		network.registerMessage(MessageReport.Handler.class, MessageReport.class, 0, Side.CLIENT);
 		
 	}
 	

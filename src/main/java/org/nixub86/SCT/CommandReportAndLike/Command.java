@@ -14,7 +14,7 @@ public class Command implements ICommand{
 
 	static int Report;
 
-	int Like;
+	static int Like;
 
 	int Repytachiya;
 	

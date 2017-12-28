@@ -3,6 +3,8 @@ package org.nixub86.SCT.CommandReportAndLike;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -28,8 +30,9 @@ public class MessageReport extends Command implements IMessage{
 		this.Report = buf.readInt();
 	}
 
-	public static class Handler implements IMessageHandler<MessageReport, IMessage> {
+	public static class Handler implements IMessageHandler<MessageReport, IMessage> { 	
 
+		@SideOnly(Side.CLIENT)
 		@Override
 		public IMessage onMessage(MessageReport packet, MessageContext context) {
 	
@@ -37,10 +40,10 @@ public class MessageReport extends Command implements IMessage{
 			EntityPlayer player = Minecraft.getMinecraft().thePlayer;
 	
 			PlayerReport_Like.get(player).getReport();
+			
+			System.out.println("re");
+			
 			return null;
 		}
-
-	}
-
-	
+	}	
 }

@@ -23,7 +23,7 @@ public class Info extends Command
 		if(sender instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) sender;
 		
-			player.addChatMessage(new ChatComponentTranslation("Like: " + Like + " " + "Report: " + Report + " " + "Reputation: " + Repytachiya));
+			player.addChatMessage(new ChatComponentTranslation("Like: " + Command.Like + " " + "Report: " + Command.Report + " " + "Reputation: " + Repytachiya));
 		}
 	}
 }
