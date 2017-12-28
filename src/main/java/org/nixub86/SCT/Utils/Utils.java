@@ -1,5 +1,6 @@
 package org.nixub86.SCT.Utils;
 
+import org.nixub86.SCT.GUIs.RenderGuiHandler;
 import org.nixub86.SCT.Items.ItemsSCT;
 import org.nixub86.SCT.Items.Universal;
 
@@ -39,6 +40,7 @@ public class Utils{
 	public static void registerEvents() 
 	{
 		 MinecraftForge.EVENT_BUS.register(new SaplingEvent());
+		 MinecraftForge.EVENT_BUS.register(new RenderGuiHandler());
 	}
 	
 }

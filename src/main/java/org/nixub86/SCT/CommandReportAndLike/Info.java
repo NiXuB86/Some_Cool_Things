@@ -6,6 +6,7 @@ import net.minecraft.util.ChatComponentTranslation;
 
 public class Info extends Command
 {
+	
 	@Override
 	public String getCommandName() {
 		return nameCommnadInfo;
@@ -22,8 +23,11 @@ public class Info extends Command
 		
 		if(sender instanceof EntityPlayer){
 			EntityPlayer player = (EntityPlayer) sender;
-		
-			player.addChatMessage(new ChatComponentTranslation("Like: " + Like + " " + "Report: " + Report + " " + "Reputation: " + Repytachiya));
+			
+			Reputation = Like - Report;
+			player.addChatMessage(new ChatComponentTranslation("Like: " + Like + " " + "Report: " + Report + " " + "Reputation: " + Reputation));
 		}
 	}
+	
+	
 }
