@@ -1,6 +1,7 @@
 package org.nixub86.SCT.CommandReportAndLike;
 
 import java.util.List;
+import java.util.UUID;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommand;
@@ -37,12 +38,19 @@ public class CommandLike extends Command
 	@Override
 	public void processCommand(ICommandSender sender, String[] p_71515_2_) 
 	{
-		Like += 1;
-		System.out.println(Like);
-		
+	
 		EntityPlayerMP entityplayermp = getPlayer(sender, p_71515_2_[0]);
 		
 		String s = entityplayermp.getCommandSenderName();
+		
+		if(s == null)
+		{
+			entityplayermp.addChatMessage(new ChatComponentTranslation("Ник"));
+		}else
+		{
+			Like += 1;
+			System.out.println(Like);
+		}
 		
 		entityplayermp.addChatMessage(new ChatComponentTranslation("Игноку"  + " " + s + " " + "поставили  лайк"));
 		entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " " + Like + " " + "лайков"));

@@ -44,13 +44,18 @@ public class CommandReport extends Command{
 	@Override
 	public void processCommand(ICommandSender sender, String[] p_71515_2_) {
 		
-		Report += 1;
-		System.out.println(Report);
-		
-		
 		EntityPlayerMP entityplayermp = getPlayer(sender, p_71515_2_[0]);
 		
 		String s = entityplayermp.getCommandSenderName();
+		
+		if(s == null)
+		{
+			entityplayermp.addChatMessage(new ChatComponentTranslation("Ник"));
+		}else
+		{
+			Report += 1;
+			System.out.println(Report);
+		}
 		
 		entityplayermp.addChatMessage(new ChatComponentTranslation("Игноку"  + " " + s + " " + "кинули репорт"));
 		entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " " + Report + " " +  "репортов"));

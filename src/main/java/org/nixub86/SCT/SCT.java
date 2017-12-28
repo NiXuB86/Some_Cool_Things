@@ -6,6 +6,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import org.nixub86.SCT.CommandReportAndLike.CommandLike;
 import org.nixub86.SCT.CommandReportAndLike.CommandReport;
 import org.nixub86.SCT.CommandReportAndLike.Info;
+import org.nixub86.SCT.CommandReportAndLike.MessageReport;
 import org.nixub86.SCT.Items.ItemsSCT;
 
 import cpw.mods.fml.common.Mod;
@@ -16,6 +17,9 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod (modid = SCT.MODID, name = SCT.MODNAME, version = SCT.VERSION)
 public class SCT {
@@ -29,10 +33,17 @@ public class SCT {
 	@SidedProxy(clientSide = "org.nixub86.SCT.ClientProxy", serverSide = "org.nixub86.SCT.CommonProxy")
 	public static CommonProxy proxy;
 	
+	
+	public static SimpleNetworkWrapper network;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e)
 	{
 		proxy.preInit(e);
+		
+		network = NetworkRegistry.INSTANCE.newSimpleChannel(SCT.MODID);
+		//network.registerMessage(MessageReport.Handler.class, MessageReport.class, 0, Side.CLIENT);
+		
 	}
 	
 	@EventHandler

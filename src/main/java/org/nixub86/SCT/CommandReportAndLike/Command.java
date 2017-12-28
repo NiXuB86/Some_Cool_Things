@@ -12,7 +12,11 @@ import net.minecraft.server.MinecraftServer;
 
 public class Command implements ICommand{
 
-	int Report, Like, Repytachiya;
+	static int Report;
+
+	int Like;
+
+	int Repytachiya;
 	
 	protected final List ListCommand;
 	
