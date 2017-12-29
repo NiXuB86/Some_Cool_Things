@@ -14,9 +14,9 @@ public class EventReport {
 
 		@SubscribeEvent
 		public void addPlayerConstructingReport(EntityEvent.EntityConstructing event) {
-			if (event.entity instanceof EntityPlayer)
-				if (PlayerReport_Like.get((EntityPlayer)event.entity) == null)
-					PlayerReport_Like.reg((EntityPlayer)event.entity);
+			if (event.entity instanceof EntityPlayer && PlayerReport_Like.get((EntityPlayer) event.entity) == null)
+
+				PlayerReport_Like.reg((EntityPlayer) event.entity);
 		}
 	}
 	
@@ -25,8 +25,8 @@ public class EventReport {
 		if (!event.entity.worldObj.isRemote && event.entity instanceof EntityPlayerMP)
 			if (PlayerReport_Like.get((EntityPlayer)event.entity) != null) {
 				
-				int Report = PlayerReport_Like.get((EntityPlayer)event.entity).getReport();
+				int Report = PlayerReport_Like.get((EntityPlayer)event.entity).getMaxReport();
 				SCT.network.sendTo(new MessageReport(Report), (EntityPlayerMP)event.entity);
-			}
+		}
 	}
 }

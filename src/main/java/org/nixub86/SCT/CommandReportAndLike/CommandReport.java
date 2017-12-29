@@ -19,6 +19,7 @@ import net.minecraft.world.World;
 
 public class CommandReport extends Command{
     
+	
 	@Override
 	public int compareTo(Object arg0) {
 		return 0;
@@ -45,21 +46,43 @@ public class CommandReport extends Command{
 	public void processCommand(ICommandSender sender, String[] p_71515_2_) {
 		
 		EntityPlayerMP entityplayermp = getPlayer(sender, p_71515_2_[0]);
-		
 		String s = entityplayermp.getCommandSenderName();
 		
-		if(s == null)
+		PlayerReport_Like pro = PlayerReport_Like.get(entityplayermp);
+		
+		
+		if(pro.getReport() >= 0)
 		{
-			entityplayermp.addChatMessage(new ChatComponentTranslation("Ник"));
-		}else
-		{
-			Report += 1;
-			System.out.println(Report);
+			pro.addReport(1);
+			System.out.println("<0");
+			
+			entityplayermp.addChatMessage(new ChatComponentTranslation("Игноку"  + " " + s + " " + pro.getReport() + " " + "кинули репорт"));
+			//entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " "  + " " + pro.getReport() + " " + "репортов"));
 		}
 		
-		entityplayermp.addChatMessage(new ChatComponentTranslation("Игноку"  + " " + s + " " + "кинули репорт"));
-		entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " " + Report + " " +  "репортов"));
-   
+		 if(pro.getReport() == pro.getMaxReport())
+		{
+			entityplayermp.addChatMessage(new ChatComponentTranslation(pro.getReport() + "репортов"));
+
+			pro.reserAll();
+			System.out.println("[[eqwqeqwesadsad");
+			
+		}
+		
+		
+		/*if(s == null)
+		{
+			entityplayermp.addChatMessage(new ChatComponentTranslation(":ы " + report));
+			
+		}else
+		{
+			report += 1;
+			System.out.println(report);
+			entityplayermp.addChatMessage(new ChatComponentTranslation(": " + report));
+			
+			System.out.println(PlayerReport_Like.getReport() + "sadasdsdasd");
+		
+		}*/
 	}
 	
 	public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_)

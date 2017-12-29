@@ -12,11 +12,11 @@ import net.minecraft.server.MinecraftServer;
 
 public class Command implements ICommand{
 
-	static int Report;
+	public static int Report;
 
-	static int Like;
+	public static int Like;
 
-	int Repytachiya;
+	public static int Reputation;
 	
 	protected final List ListCommand;
 	
@@ -29,8 +29,6 @@ public class Command implements ICommand{
 		ListCommand = new ArrayList(); 
 		//Report = 0;
 		//Like = 0;
-		
-		Repytachiya = Like - Report;
 		
 		nameCommandReport = "rep";
 		nameCommnadLike = "like";

@@ -5,6 +5,7 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.MinecraftForge;
 
 import org.nixub86.SCT.Cripy.Entity.EntityCripFlyR;
 import org.nixub86.SCT.Cripy.Entity.EntityKellog;
@@ -15,6 +16,7 @@ import org.nixub86.SCT.Cripy.Render.RenderFlyR;
 import org.nixub86.SCT.Cripy.Render.RenderKellog;
 import org.nixub86.SCT.Cripy.Render.RenderMush;
 import org.nixub86.SCT.Cripy.Render.RenderSuperCreeper;
+import org.nixub86.SCT.GUIs.RenderGuiHandler;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -62,6 +64,7 @@ public class ClientProxy extends CommonProxy {
 	public void postInit(FMLPostInitializationEvent e) {
 		// TODO Auto-generated method stub
 		super.postInit(e);
+		
 	}
 	
 }

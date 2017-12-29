@@ -13,6 +13,7 @@ import net.minecraft.util.ChatComponentTranslation;
 
 public class CommandLike extends Command
 {
+	
 	@Override
 	public int compareTo(Object arg0) {
 		return 0;
@@ -38,22 +39,27 @@ public class CommandLike extends Command
 	@Override
 	public void processCommand(ICommandSender sender, String[] p_71515_2_) 
 	{
-	
 		EntityPlayerMP entityplayermp = getPlayer(sender, p_71515_2_[0]);
-		
 		String s = entityplayermp.getCommandSenderName();
 		
-		if(s == null)
-		{	
-			entityplayermp.addChatMessage(new ChatComponentTranslation("Ник"));
-		}else
+		PlayerReport_Like pro = PlayerReport_Like.get(entityplayermp);
+		
+		if(pro.getLike() >= 0)
 		{
-			Like += 1;
-			System.out.println(Like);
+			pro.addLike(1);
+			System.out.println("<0");
+			entityplayermp.addChatMessage(new ChatComponentTranslation("Игpоку " + s + " поставили лайк"));
+		
+		}
+	
+		if(pro.getLike() >= pro.getMaxLike())
+		{
+			pro.resetLike();
+			System.out.println("[[eqwqeqwesadsad");
 		}
 		
-		entityplayermp.addChatMessage(new ChatComponentTranslation("Игноку"  + " " + s + " " + "поставили  лайк"));
-		entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " " + Like + " " + "лайков"));
+		
+		//entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " " + pro.getLike() + " " + "лайков"));
 	}
 	
 	public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_)

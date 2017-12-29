@@ -44,6 +44,7 @@ public class SCT {
 		network = NetworkRegistry.INSTANCE.newSimpleChannel(SCT.MODID);
 		network.registerMessage(MessageReport.Handler.class, MessageReport.class, 0, Side.CLIENT);
 		
+		
 	}
 	
 	@EventHandler

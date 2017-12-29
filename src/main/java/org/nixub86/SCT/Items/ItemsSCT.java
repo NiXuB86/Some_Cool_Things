@@ -134,7 +134,7 @@ public class ItemsSCT extends Item{
 		GameRegistry.registerWorldGenerator(GenTree, 0);
 		
 		
-		Utils.registerEvents();
+		
 		
 		MinecraftForge.EVENT_BUS.register(new Utils());
 		
