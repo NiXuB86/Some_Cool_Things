@@ -6,6 +6,7 @@ import org.nixub86.SCT.CommandReportAndLike.PlayerReport_Like;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityClientPlayerMP;
@@ -23,6 +24,7 @@ public class ReputationGUI extends Gui {
 	public int rep;
 	
 	EntityPlayer player;
+	EntityPlayerMP playerMP;
 	
 	String text = "Reputation: ";
 	String color = "FFFFFF";
@@ -38,19 +40,26 @@ public class ReputationGUI extends Gui {
 	public ReputationGUI(Minecraft mc)
 	{
 		this.mc = mc;
-		EntityPlayer player = mc.thePlayer;
+		EntityPlayer player = (EntityPlayer)mc.thePlayer;
 		ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
 		int width = scaled.getScaledWidth();
 		int height = scaled.getScaledHeight();
 		
-		player =  MinecraftServer.getServer().getConfigurationManager().func_152612_a(mc.thePlayer.getDisplayName());
+		//player =  MinecraftServer.getServer().getConfigurationManager().func_152612_a(mc.thePlayer.getDisplayName());
 		//player = ;
+		if  (player instanceof EntityPlayerMP)
+		{
+			//player = ;
+			EntityPlayerMP playerMP = (EntityPlayerMP)player;
+		} else
+		{
+			playerMP =  MinecraftServer.getServer().getConfigurationManager().func_152612_a(mc.thePlayer.getDisplayName());
+		}
 		
-		
-		
+		//text = "Репутация у " + mc.thePlayer.getDisplayName() +": ";
 		
 		//System.out.println("Reputation: " + rep);
-		rep =  reput(player);
+		rep =  reput(playerMP);
 		text = text + rep;
 		
 		if (rep >= 5)
