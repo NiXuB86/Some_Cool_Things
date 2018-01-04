@@ -25,6 +25,7 @@ public class EventReport {
 		if (!event.entity.worldObj.isRemote && event.entity instanceof EntityPlayerMP)
 			if (PlayerReport_Like.get((EntityPlayer)event.entity) != null) {
 				
+				
 				int Report = PlayerReport_Like.get((EntityPlayer)event.entity).getMaxReport();
 				SCT.network.sendTo(new MessageReport(Report), (EntityPlayerMP)event.entity);
 		}

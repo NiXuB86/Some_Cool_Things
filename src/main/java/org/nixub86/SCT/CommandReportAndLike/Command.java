@@ -84,7 +84,7 @@ public class Command implements ICommand{
 		return false;
 	}
 	
-	public EntityPlayerMP getPlayer(ICommandSender p_82359_0_, String p_82359_1_)
+	public static EntityPlayerMP getPlayer(ICommandSender p_82359_0_, String p_82359_1_)
     {
         EntityPlayerMP entityplayermp = PlayerSelector.matchOnePlayer(p_82359_0_, p_82359_1_);
 

@@ -1,14 +1,18 @@
 package org.nixub86.SCT;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 
 import org.nixub86.SCT.CommandReportAndLike.CommandLike;
 import org.nixub86.SCT.CommandReportAndLike.CommandReport;
 import org.nixub86.SCT.CommandReportAndLike.Info;
 import org.nixub86.SCT.CommandReportAndLike.MessageReport;
+import org.nixub86.SCT.GUIs.ReputationGUI;
 import org.nixub86.SCT.Items.ItemsSCT;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -63,6 +67,8 @@ public class SCT {
 		e.registerServerCommand(new CommandReport());
 		e.registerServerCommand(new CommandLike());
 		e.registerServerCommand(new Info());
+		
+	
 	}
 	
 	

@@ -8,6 +8,7 @@ import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Items;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentTranslation;
 
@@ -54,6 +55,8 @@ public class CommandLike extends Command
 	
 		if(pro.getLike() >= pro.getMaxLike())
 		{
+			entityplayermp.dropItem(Items.ender_pearl, 64);
+			
 			pro.resetLike();
 			System.out.println("[[eqwqeqwesadsad");
 		}
