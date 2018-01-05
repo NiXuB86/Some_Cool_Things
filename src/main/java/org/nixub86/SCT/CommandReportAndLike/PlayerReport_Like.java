@@ -65,6 +65,8 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 		System.out.println("NBT: " + this.currentReport + "/" + this.maxReport);
 		System.out.println("NBT: " + this.currentLike + "/" + this.maxLike);
 	}
+	
+	
 
 	public void replenishReport()
 	{

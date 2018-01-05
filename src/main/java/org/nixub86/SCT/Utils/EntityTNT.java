@@ -29,7 +29,7 @@ public class EntityTNT extends Entity{
         this.motionX = (double)(-((float)Math.sin((double)f)) * 0.02F);
         this.motionY = 0.20000000298023224D;
         this.motionZ = (double)(-((float)Math.cos((double)f)) * 0.02F);
-        this.fuse = 80;//Скорость взрыва
+        this.fuse = 20;//Скорость взрыва
         this.prevPosX = x;
         this.prevPosY = y;
         this.prevPosZ = z;
@@ -86,8 +86,8 @@ public class EntityTNT extends Entity{
 
     private void explode()
     {
-        //float f = 40;
-        this.worldObj.createExplosion(this, this.posX , this.posY , this.posZ, 70F, true);
+        float f = 40;
+        this.worldObj.createExplosion(this, this.posX , this.posY , this.posZ, f , true);
     }
 
     /**

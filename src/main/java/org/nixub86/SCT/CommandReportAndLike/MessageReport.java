@@ -9,8 +9,10 @@ import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 
-public class MessageReport extends Command implements IMessage{
+public class MessageReport implements IMessage{
 
+    private int Report;
+	
 	public MessageReport() {}
 	
 	public MessageReport(int report) 
@@ -30,20 +32,22 @@ public class MessageReport extends Command implements IMessage{
 		this.Report = buf.readInt();
 	}
 
-	public static class Handler implements IMessageHandler<MessageReport, IMessage> { 	
-
-		@SideOnly(Side.CLIENT)
-		@Override
-		public IMessage onMessage(MessageReport packet, MessageContext context) {
-	
-			int Report = packet.Report;
-			EntityPlayer player = Minecraft.getMinecraft().thePlayer;
-	
-			PlayerReport_Like.get(player).getReport();
-			
-			System.out.println("re");
-			
-			return null;
-		}
-	}	
-}
+	   public static class Handler extends MessageHandler.Client<PacketSyncMana> {
+	        @Override
+	        public IMessage handleClientMessage(final EntityPlayer player, final PacketSyncMana msg, MessageContext ctx) {
+	           
+	        	
+	        	
+	        	
+	        	
+	        	
+	        	ClientUtils.addScheduledTask(new Runnable() {
+	                @Override
+	                public void run() {
+	                    PlayerData.get(player).setMana(msg.mana);
+	                }
+	            });
+	            return null;
+	        }
+	    }
+	}
