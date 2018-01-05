@@ -1,7 +1,11 @@
 package org.nixub86.SCT.CommandReportAndLike;
 
+import org.nixub86.SCT.network.PacketDispatcher;
+import org.nixub86.SCT.network.SyncPlayerPropsMessage;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtendedEntityProperties;
@@ -10,7 +14,7 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 
 	public final static String TagReport = "TegReport";
 	
-	public EntityPlayer player;
+	private final EntityPlayer player;
 	private int currentReport, maxReport;
 	
 	private int currentLike, maxLike;
@@ -85,6 +89,7 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 	public Integer getReport()
 	{
 		return this.currentReport;
+		
 	}
 	
 	public Integer addReport(int report)
@@ -111,6 +116,7 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 	public Integer addLike(int like)
 	{
 		return this.currentLike += like;
+		
 	}
 	
 	public void resetLike()
@@ -119,7 +125,7 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 		this.maxLike = 20;
 	}
 	
-	public void reserAll()
+	public void resetAll()
 	{
 		this.currentLike = 0;
 		this.maxLike = 20;

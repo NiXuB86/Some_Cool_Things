@@ -16,6 +16,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.ServerConfigurationManager;
 
+@SideOnly(Side.CLIENT)
 public class ReputationGUI extends Gui {
 	
 	//int Reputation = Command.Like - Command.Report;

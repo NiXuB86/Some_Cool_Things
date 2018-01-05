@@ -64,7 +64,7 @@ public class CommandReport extends Command{
 		{
 			entityplayermp.addChatMessage(new ChatComponentTranslation(pro.getReport() + "репортов"));
 
-			pro.reserAll();
+			pro.resetAll();
 			System.out.println("[[eqwqeqwesadsad");
 			
 		}

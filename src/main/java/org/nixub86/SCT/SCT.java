@@ -3,6 +3,8 @@ package org.nixub86.SCT;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.nixub86.SCT.CommandReportAndLike.CommandLike;
 import org.nixub86.SCT.CommandReportAndLike.CommandReport;
 import org.nixub86.SCT.CommandReportAndLike.Info;
@@ -33,6 +35,7 @@ public class SCT {
 	@SidedProxy(clientSide = "org.nixub86.SCT.ClientProxy", serverSide = "org.nixub86.SCT.CommonProxy")
 	public static CommonProxy proxy;
 	
+	public static final Logger logger = LogManager.getLogger(MODID);
 	
 	public static SimpleNetworkWrapper network;
 	
