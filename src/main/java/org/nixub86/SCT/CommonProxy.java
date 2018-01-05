@@ -36,6 +36,7 @@ public class CommonProxy {
 		return ctx.getServerHandler().playerEntity;
 	}
 
+
 	/**
 	 * Returns the current thread based on side during message handling,
 	 * used for ensuring that the message is being handled by the main thread
@@ -43,4 +44,5 @@ public class CommonProxy {
 	public IThreadListener getThreadFromContext(MessageContext ctx) {
 		return ctx.getServerHandler().playerEntity.getServerForPlayer();
 	}*/
+
 }

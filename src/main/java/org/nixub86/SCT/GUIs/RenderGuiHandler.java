@@ -1,5 +1,8 @@
 package org.nixub86.SCT.GUIs;
 
+import org.nixub86.SCT.CommandReportAndLike.PlayerReport_Like;
+
+import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;

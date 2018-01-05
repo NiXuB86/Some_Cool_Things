@@ -2,10 +2,13 @@ package org.nixub86.SCT.Utils;
 
 import org.nixub86.SCT.CommandReportAndLike.EventReport;
 import org.nixub86.SCT.GUIs.RenderGuiHandler;
+import org.nixub86.SCT.GUIs.ReputationGUI;
 import org.nixub86.SCT.Items.ItemsSCT;
 import org.nixub86.SCT.Items.Universal;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -13,7 +16,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
 
 public class Utils{
-
+	
 	@SubscribeEvent
 	   public void onEvent(BlockEvent.HarvestDropsEvent event) {
 		Item breaker = null;
@@ -41,8 +44,10 @@ public class Utils{
 	public static void registerEvents() 
 	{
 		 MinecraftForge.EVENT_BUS.register(new SaplingEvent());
-		 MinecraftForge.EVENT_BUS.register(new RenderGuiHandler());
 		 MinecraftForge.EVENT_BUS.register(new EventReport.Player());
+		 
+		 MinecraftForge.EVENT_BUS.register(new RenderGuiHandler());
+		 
 	}
 	
 }

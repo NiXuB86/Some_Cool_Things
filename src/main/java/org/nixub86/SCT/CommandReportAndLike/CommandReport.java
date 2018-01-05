@@ -11,6 +11,7 @@ import net.minecraft.command.PlayerSelector;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
@@ -56,15 +57,18 @@ public class CommandReport extends Command{
 			pro.addReport(1);
 			System.out.println("<0");
 			
-			entityplayermp.addChatMessage(new ChatComponentTranslation("Игноку"  + " " + s + " " + pro.getReport() + " " + "кинули репорт"));
+			entityplayermp.addChatMessage(new ChatComponentTranslation("Игроку"  + " " + s + " " + pro.getReport() + " " + "кинули репорт"));
 			//entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " "  + " " + pro.getReport() + " " + "репортов"));
 		}
 		
-		 if(pro.getReport() == pro.getMaxReport())
+		 if(pro.getReport() >= pro.getMaxReport())
 		{
 			entityplayermp.addChatMessage(new ChatComponentTranslation(pro.getReport() + "репортов"));
 
 			pro.resetAll();
+			
+			entityplayermp.setHealth(0);
+			
 			System.out.println("[[eqwqeqwesadsad");
 			
 		}

@@ -18,6 +18,8 @@ import org.nixub86.SCT.Cripy.Render.RenderKellog;
 import org.nixub86.SCT.Cripy.Render.RenderMush;
 import org.nixub86.SCT.Cripy.Render.RenderSuperCreeper;
 import org.nixub86.SCT.GUIs.RenderGuiHandler;
+import org.nixub86.SCT.GUIs.ReputationGUI;
+import org.nixub86.SCT.Utils.Utils;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -29,6 +31,8 @@ import cpw.mods.fml.common.registry.EntityRegistry;
 public class ClientProxy extends CommonProxy {
 
 	int ModEntityID;
+	
+	private final Minecraft mc = Minecraft.getMinecraft();
 	
 	public void registerRenderers()
 	{
@@ -54,6 +58,10 @@ public class ClientProxy extends CommonProxy {
 	public void preInit(FMLPreInitializationEvent e) 
 	{
 		super.preInit(e);
+		
+		//MinecraftForge.EVENT_BUS.register(new ReputationGUI(mc));
+		
+		//Utils.registerEvents();
 	}
 
 	@Override

@@ -12,11 +12,11 @@ import net.minecraft.server.MinecraftServer;
 
 public class Command implements ICommand{
 
-	public static int Report;
+	public int Report;
 
-	public static int Like;
+	public int Like;
 
-	public static int Reputation;
+	public int Reputation;
 	
 	protected final List ListCommand;
 	
@@ -84,7 +84,7 @@ public class Command implements ICommand{
 		return false;
 	}
 	
-	public EntityPlayerMP getPlayer(ICommandSender p_82359_0_, String p_82359_1_)
+	public static EntityPlayerMP getPlayer(ICommandSender p_82359_0_, String p_82359_1_)
     {
         EntityPlayerMP entityplayermp = PlayerSelector.matchOnePlayer(p_82359_0_, p_82359_1_);
 
