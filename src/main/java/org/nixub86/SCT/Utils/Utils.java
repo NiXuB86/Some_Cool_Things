@@ -16,8 +16,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
 
 public class Utils{
-
-	private final Minecraft mc = Minecraft.getMinecraft();
 	
 	@SubscribeEvent
 	   public void onEvent(BlockEvent.HarvestDropsEvent event) {

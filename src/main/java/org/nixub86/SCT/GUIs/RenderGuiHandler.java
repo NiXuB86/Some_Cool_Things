@@ -10,10 +10,10 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 
 public class RenderGuiHandler {
 	
-	@SubscribeEvent(priority = EventPriority.NORMAL)
+	@SubscribeEvent
     public void onRenderGui(RenderGameOverlayEvent.Post event)
     {
-		if (event.isCancelable() || event.type != ElementType.EXPERIENCE) return;
+		if (event.type != ElementType.EXPERIENCE) return;
 		new ReputationGUI(Minecraft.getMinecraft());
     }
 }

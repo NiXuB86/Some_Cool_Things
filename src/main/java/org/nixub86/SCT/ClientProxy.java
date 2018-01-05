@@ -57,7 +57,7 @@ public class ClientProxy extends CommonProxy {
 	{
 		super.preInit(e);
 		
-		MinecraftForge.EVENT_BUS.register(new ReputationGUI(mc));
+		//MinecraftForge.EVENT_BUS.register(new ReputationGUI(mc));
 		
 		//Utils.registerEvents();
 	}
