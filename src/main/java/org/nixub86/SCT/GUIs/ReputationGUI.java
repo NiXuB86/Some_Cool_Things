@@ -6,70 +6,62 @@ import org.nixub86.SCT.CommandReportAndLike.PlayerReport_Like;
 
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityClientPlayerMP;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.server.management.ServerConfigurationManager;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 
+@SideOnly(Side.CLIENT)
 public class ReputationGUI extends Gui {
 	
-	//int Reputation = Command.Like - Command.Report;
-	
-	Minecraft mc;
-	
-	public int rep;
-	
-	public int like, report;
-	
-	String text = "Reputation: ";
-	String color = "FFFFFF";
-	
-	public ReputationGUI(Minecraft mc)
-	{
+	private Minecraft mc;
+
+	public ReputationGUI(Minecraft mc) {
+		super();
 		this.mc = mc;
-		
-		ScaledResolution scaled = new ScaledResolution(mc, mc.displayWidth, mc.displayHeight);
-		int width = scaled.getScaledWidth();
-		int height = scaled.getScaledHeight();
-		
-		//rep = like - report;
-		
-		if (Info.rep >= 5)
-		{
-			color = "5DE100";
-		}
-		if (Info.rep <= -5)
-		{
-			color = "FF0000";
-		}
-		
-		drawCenteredString(mc.fontRenderer, text, 36, 4, Integer.parseInt(color, 16));
 	}
-	
-	@SubscribeEvent(priority = EventPriority.NORMAL)
-    public void onRenderGui(RenderGameOverlayEvent.Post event)
-    {
-		if (event.type != ElementType.EXPERIENCE) return;
+
+		@SubscribeEvent(priority=EventPriority.NORMAL)
+		public void onRenderExperienceBar(RenderGameOverlayEvent.Post event) {
+			if (event.type != ElementType.EXPERIENCE) {
+				return;
+			}
+
+			PlayerReport_Like props = PlayerReport_Like.get(this.mc.thePlayer);
+			if (props == null || props.getReport() >= 0) {
+				return;
+			}
+
+			int xPos = 2;
+			int yPos = 2;
 		
 		
-		PlayerReport_Like props = PlayerReport_Like.get(this.mc.thePlayer);
-		
-		
-		
-    }
-	
-	
-	
-	
-	
-	
-}
+			drawTexturedModalRect(xPos, yPos, 0, 0, 56, 9);
+			
+			int Rep = (int)(((float) props.getMaxReport() / props.getLike()));
+			
+			drawTexturedModalRect(xPos + 3, yPos + 3, 0, 9, Rep, 3);
+			
+			String s = "Mana " + props.getReport() + "/" + props.getMaxReport();
+			
+			this.mc.fontRenderer.drawString(s, xPos + 1, yPos, 0);
+			this.mc.fontRenderer.drawString(s, xPos - 1, yPos, 0);
+			this.mc.fontRenderer.drawString(s, xPos, yPos + 1, 0);
+			this.mc.fontRenderer.drawString(s, xPos, yPos - 1, 0);
+			this.mc.fontRenderer.drawString(s, xPos, yPos, 8453920);
+			
+			yPos += 10;
+			
+			System.out.println("GFASFSAFAW");
+			
+		}
+	}

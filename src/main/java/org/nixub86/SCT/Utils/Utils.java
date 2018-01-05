@@ -17,6 +17,8 @@ import net.minecraftforge.event.world.BlockEvent;
 
 public class Utils{
 
+	private final Minecraft mc = Minecraft.getMinecraft();
+	
 	@SubscribeEvent
 	   public void onEvent(BlockEvent.HarvestDropsEvent event) {
 		Item breaker = null;
@@ -45,10 +47,8 @@ public class Utils{
 	{
 		 MinecraftForge.EVENT_BUS.register(new SaplingEvent());
 		 MinecraftForge.EVENT_BUS.register(new EventReport.Player());
-		 //MinecraftForge.EVENT_BUS.register(new RenderGuiHandler());
 		 
-			if (FMLCommonHandler.instance().getEffectiveSide().isClient())
-				MinecraftForge.EVENT_BUS.register(new ReputationGUI(Minecraft.getMinecraft()));
+		 MinecraftForge.EVENT_BUS.register(new RenderGuiHandler());
 		 
 	}
 	

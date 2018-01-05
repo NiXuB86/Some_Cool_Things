@@ -92,7 +92,7 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 		return currentReport += report;
 	}
 	
-	public void reserReport()
+	public void resetReport()
 	{
 		this.currentReport = 0;
 		this.maxReport = 10;
