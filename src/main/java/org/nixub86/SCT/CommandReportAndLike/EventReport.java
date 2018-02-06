@@ -9,25 +9,27 @@ import net.minecraftforge.event.entity.EntityEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 
 public class EventReport {
+	//-------------------------------------------------------------------------V
+		public static class Player {
 
-	public static class Player {
+			@SubscribeEvent
+			public void addPlayerConstructingWeight(EntityEvent.EntityConstructing event) {
+				if (event.entity instanceof EntityPlayer)
+					if (PlayerReport_Like.get((EntityPlayer)event.entity) == null)
+						PlayerReport_Like.reg((EntityPlayer)event.entity);
+			}
 
-		@SubscribeEvent
-		public void addPlayerConstructingReport(EntityEvent.EntityConstructing event) {
-			if (event.entity instanceof EntityPlayer && PlayerReport_Like.get((EntityPlayer) event.entity) == null)
+			@SubscribeEvent
+			public void joinPlayer(EntityJoinWorldEvent event) {
+				if (!event.entity.worldObj.isRemote && event.entity instanceof EntityPlayerMP)
+					if (PlayerReport_Like.get((EntityPlayer)event.entity) != null) {
+						
+						int report = PlayerReport_Like.get((EntityPlayer)event.entity).getMaxReport();
+						int like = PlayerReport_Like.get((EntityPlayer)event.entity).getMaxLike();
+						
+						SCT.network.sendTo(new MessageReport(report, like), (EntityPlayerMP)event.entity);
+					}
+			}
 
-				PlayerReport_Like.reg((EntityPlayer) event.entity);
 		}
-	}
-	
-	@SubscribeEvent
-	public void joinPlayer(EntityJoinWorldEvent event) {
-		if (!event.entity.worldObj.isRemote && event.entity instanceof EntityPlayerMP)
-			if (PlayerReport_Like.get((EntityPlayer)event.entity) != null) {
-				
-				
-				int Report = PlayerReport_Like.get((EntityPlayer)event.entity).getMaxReport();
-				SCT.network.sendTo(new MessageReport(Report), (EntityPlayerMP)event.entity);
-		}
-	}
 }

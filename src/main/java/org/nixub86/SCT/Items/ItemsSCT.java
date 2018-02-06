@@ -3,6 +3,7 @@ package org.nixub86.SCT.Items;
 import org.nixub86.SCT.RecipesSCT;
 import org.nixub86.SCT.SCT;
 import org.nixub86.SCT.Armor.Armor;
+import org.nixub86.SCT.Armor.Jetpack;
 import org.nixub86.SCT.Blocks.BlockXyita;
 import org.nixub86.SCT.Blocks.LushCobblestone;
 import org.nixub86.SCT.Blocks.GeshPlanks;
@@ -75,6 +76,7 @@ public class ItemsSCT extends Item{
 	public static ItemArmor armorpants;
 	public static ItemArmor armorboots;
 	
+	public static ItemArmor jet;
 	
 	public static ItemFood Food;
 	
@@ -98,6 +100,10 @@ public class ItemsSCT extends Item{
 		GameRegistry.registerItem(armorplate, "armorplate");
 		GameRegistry.registerItem(armorpants, "armorpants");
 		GameRegistry.registerItem(armorboots, "armorboots");
+		
+		jet = new Jetpack(0, 1);
+		GameRegistry.registerItem(jet, "jet");
+		
 		
 		triniumdust = new Item().setCreativeTab(ItemsSCT.SCTTab).setTextureName("sct:TriniumDust").setUnlocalizedName("Trinium dust");
 		GameRegistry.registerItem(triniumdust, "triniumdust");

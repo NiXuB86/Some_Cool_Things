@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.nixub86.SCT.CommandReportAndLike.CommandLike;
 import org.nixub86.SCT.CommandReportAndLike.CommandReport;
+import org.nixub86.SCT.CommandReportAndLike.EventReport;
 import org.nixub86.SCT.CommandReportAndLike.Info;
 import org.nixub86.SCT.CommandReportAndLike.MessageReport;
 import org.nixub86.SCT.GUIs.ReputationGUI;
@@ -60,7 +61,12 @@ public class SCT {
 	}
 	
 	@EventHandler
-	public void init(FMLInitializationEvent e) {
+	public void init(FMLInitializationEvent e) 
+	{
+		
+		MinecraftForge.EVENT_BUS.register(new EventReport.Player());
+		//FMLCommonHandler.instance().bus().register(new EventReport.Common());
+		
 	    proxy.init(e);
 	}
 

@@ -14,6 +14,6 @@ public class RenderGuiHandler {
     public void onRenderGui(RenderGameOverlayEvent.Post event)
     {
 		if (event.type != ElementType.EXPERIENCE) return;
-		new ReputationGUI(Minecraft.getMinecraft());
+		//new ReputationGUI(Minecraft.getMinecraft());
     }
 }
