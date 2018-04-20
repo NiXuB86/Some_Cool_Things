@@ -26,7 +26,7 @@ public class EntityCripFlyR extends EntityMob {
     public EntityCripFlyR(World world)
     {
         super(world);
-        this.isImmuneToFire = false;
+        this.isImmuneToFire = true;
         this.experienceValue = 100000;
     }
 
@@ -94,7 +94,7 @@ public class EntityCripFlyR extends EntityMob {
     {
         if (this.attackTime <= 0 && p_70785_2_ < 2.0F && p_70785_1_.boundingBox.maxY > this.boundingBox.minY && p_70785_1_.boundingBox.minY < this.boundingBox.maxY)
         {
-            this.attackTime = 20;
+            this.attackTime = 5;
             this.attackEntityAsMob(p_70785_1_);
         }
         else if (p_70785_2_ < 30.0F)
