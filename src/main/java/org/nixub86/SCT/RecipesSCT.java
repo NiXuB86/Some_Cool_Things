@@ -25,6 +25,17 @@ public class RecipesSCT {
 	    	    new Object[]{ "111", "111", "111",
 	    	    ('1'), ItemsSCT.triniumingot});
 		
+		GameRegistry.addRecipe(new ItemStack(BlocksSCT.SuperTNT, 10), 
+	    	    new Object[]{ "121", "212", "121",
+	    	    ('1'), Items.gunpowder, ('2'), ItemsSCT.triniumingot});
+		
+		GameRegistry.addRecipe(new ItemStack(ItemsSCT.jet, 1), 
+	    	    new Object[]{ "222", "212", "222",
+	    	    ('1'), Items.diamond_chestplate, ('2'), ItemsSCT.triniumingot});
+		
+		
+		
+		
 		GameRegistry.addShapelessRecipe(new ItemStack(BlocksSCT.GeshPlanks, 4), new Object[] {BlocksSCT.GeshWood});
 		
 		/*GameRegistry.addRecipe(new ItemStack(ItemsSCT.BlockTP, 1), 
