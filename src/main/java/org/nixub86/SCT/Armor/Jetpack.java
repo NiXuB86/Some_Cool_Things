@@ -43,7 +43,7 @@ public class Jetpack extends ItemArmor{
         //	player.fallDistance = 0;
         //}
         
-        System.out.println(itemStack.getItemDamage() + "/" + itemStack.getMaxDamage() + "fall: " + player.fallDistance);
+        //System.out.println(itemStack.getItemDamage() + "/" + itemStack.getMaxDamage() + "fall: " + player.fallDistance);
         
         super.onArmorTick(world, player, itemStack);
   }

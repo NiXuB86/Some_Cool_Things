@@ -31,7 +31,7 @@ public class SuperCreeperEntity extends EntityMob{
     private int timeSinceIgnited;
     private int fuseTime = 20;
     
-    float explosionRadius = 3;
+    float explosionRadius = 30;
     
     public SuperCreeperEntity(World world)
     {
@@ -49,7 +49,8 @@ public class SuperCreeperEntity extends EntityMob{
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(1D);
+        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(10D);
+       
     }
 
     /**
@@ -65,7 +66,7 @@ public class SuperCreeperEntity extends EntityMob{
      */
     public int getMaxSafePointTries()
     {
-        return this.getAttackTarget() == null ? 3 : 3 + (int)(this.getHealth() - 1.0F);
+        return this.getAttackTarget() == null ? 10 : 10 + (int)(this.getHealth() - 10.0F);
     }
 
     /**
@@ -74,11 +75,11 @@ public class SuperCreeperEntity extends EntityMob{
     protected void fall(float p_70069_1_)
     {
         super.fall(p_70069_1_);
-        this.timeSinceIgnited = (int)((float)this.timeSinceIgnited + p_70069_1_ * 1.5F);
+        this.timeSinceIgnited = (int)((float)this.timeSinceIgnited + p_70069_1_ *3F);
 
-        if (this.timeSinceIgnited > this.fuseTime - 5)
+        if (this.timeSinceIgnited > this.fuseTime - 3)
         {
-            this.timeSinceIgnited = this.fuseTime - 5;
+            this.timeSinceIgnited = this.fuseTime - 3;
         }
     }
 
@@ -284,11 +285,11 @@ public class SuperCreeperEntity extends EntityMob{
 
             if (this.getPowered())
             {
-                this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 20f, flag);
+                this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 200f, flag);
             }
             else
             {
-                this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 30f, flag);
+                this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, 300f, flag);
             }
 
             this.setDead();

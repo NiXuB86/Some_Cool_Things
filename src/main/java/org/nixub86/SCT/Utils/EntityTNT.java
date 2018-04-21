@@ -20,7 +20,7 @@ public class EntityTNT extends Entity{
         this.setSize(0.98F, 0.98F);
         this.yOffset = this.height / 2.0F;
     }
-
+    
     public EntityTNT(World world, double x, double y, double z, EntityLivingBase entity)
     {
         this(world);

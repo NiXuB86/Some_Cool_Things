@@ -72,7 +72,7 @@ public class EntityCripFlyR extends EntityMob {
 
             if (this.getEntityToAttack() != null && this.getEntityToAttack().posY + (double)this.getEntityToAttack().getEyeHeight() > this.posY + (double)this.getEyeHeight() + (double)this.heightOffset)
             {
-                this.motionY += (0.30000001192092896D - this.motionY) * 0.30000001192092896D;
+                this.motionY += (1 - this.motionY) * 0.30000001192092896D;
             }
         }
 
@@ -83,7 +83,7 @@ public class EntityCripFlyR extends EntityMob {
 
         if (!this.onGround && this.motionY < 0.0D)
         {
-            this.motionY *= 1D;
+            this.motionY *= 2D;
         }
  
         super.onLivingUpdate();
@@ -92,9 +92,9 @@ public class EntityCripFlyR extends EntityMob {
     
     protected void attackEntity(Entity p_70785_1_, float p_70785_2_)
     {
-        if (this.attackTime <= 0 && p_70785_2_ < 2.0F && p_70785_1_.boundingBox.maxY > this.boundingBox.minY && p_70785_1_.boundingBox.minY < this.boundingBox.maxY)
+        if (this.attackTime <= 0 && p_70785_2_ < 1.0F && p_70785_1_.boundingBox.maxY > this.boundingBox.minY && p_70785_1_.boundingBox.minY < this.boundingBox.maxY)
         {
-            this.attackTime = 5;
+            this.attackTime = 2;
             this.attackEntityAsMob(p_70785_1_);
         }
         else if (p_70785_2_ < 30.0F)
@@ -109,16 +109,16 @@ public class EntityCripFlyR extends EntityMob {
 
                 if (this.field_70846_g == 1)
                 {
-                    this.attackTime = 20;
+                    this.attackTime = 2;
                     this.func_70844_e(true);
                 }
                 else if (this.field_70846_g <= 4)
                 {
-                    this.attackTime = 20;
+                    this.attackTime = 2;
                 }
                 else
                 {
-                    this.attackTime = 20;
+                    this.attackTime = 2;
                     this.field_70846_g = 0;
                     this.func_70844_e(false);
                 }
@@ -145,7 +145,7 @@ public class EntityCripFlyR extends EntityMob {
   
     private int fall(int fall) 
     {
-    	fall = 100;
+    	fall = 1000;
     	return fall;
     }
 

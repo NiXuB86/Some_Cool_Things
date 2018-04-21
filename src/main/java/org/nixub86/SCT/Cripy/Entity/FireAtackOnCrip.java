@@ -70,6 +70,7 @@ public class FireAtackOnCrip extends EntityFireball{
                 if (this.worldObj.isAirBlock(i, j, k))
                 {
                     this.worldObj.setBlock(i, j, k, Blocks.fire);
+                	
                 }
             }
 
