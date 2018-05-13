@@ -58,7 +58,7 @@ public class CommandReport extends Command{
 			System.out.println("<0");
 			
 			entityplayermp.addChatMessage(new ChatComponentTranslation("Игроку"  + " " + s + " " + pro.getReport() + " " + "кинули репорт"));
-			//entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " "  + " " + pro.getReport() + " " + "репортов"));
+			entityplayermp.addChatMessage(new ChatComponentTranslation("У игрока" + " " + s + " "  + " " + pro.getReport() + " " + "репортов"));
 		}
 		
 		 if(pro.getReport() >= pro.getMaxReport())

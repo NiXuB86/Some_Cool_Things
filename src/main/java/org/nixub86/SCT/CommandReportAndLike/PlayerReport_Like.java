@@ -19,6 +19,12 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 	
 	private int currentLike, maxLike;
 	
+	private String zadanie = null;
+	private String ZadMob = null;
+	private int ZadCol = 0; 
+	
+	
+	
 	public PlayerReport_Like(EntityPlayer player)
 	{
 		this.player = player;
@@ -27,6 +33,10 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 		
 		this.currentLike = 0;
 		this.maxLike = 20;
+	
+		this.zadanie = null;
+		this.ZadMob = null;
+		this.ZadCol = 0;
 	}
 	
 	public static void reg(EntityPlayer player)
@@ -50,6 +60,10 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 		tag.setInteger("CurrentLike", currentLike);
 		tag.setInteger("MaxLike", maxLike);
 		
+		tag.setString("zadanie", zadanie);
+		tag.setString("ZadMob", ZadMob);
+		tag.setInteger("ZadCol", ZadCol);
+		
 		compound.setTag(TagReport, tag);
 		
 	}
@@ -66,12 +80,31 @@ public class PlayerReport_Like extends Command implements IExtendedEntityPropert
 		this.currentLike = nbt_tag.getInteger("CurrentLike");
 		this.maxLike = nbt_tag.getInteger("MaxLike");
 		
+		this.zadanie = nbt_tag.getString("zadanie");
+		this.ZadMob = nbt_tag.getString("ZadMob");
+		this.ZadCol = nbt_tag.getInteger("ZadCol");
+
+		
 		System.out.println("NBT: " + this.currentReport + "/" + this.maxReport);
 		System.out.println("NBT: " + this.currentLike + "/" + this.maxLike);
 	}
 	
+	public void setZadanie(String zadanie1,int col ,String mob) 
+	{
+		zadanie = zadanie1;
+		ZadCol = col;
+		ZadMob = mob;
+		
+	}
 	
-
+	public String drawZadanie() 
+	{
+		String allZad;
+		allZad = zadanie + " " + ZadCol + " " + ZadMob;
+		
+		return allZad;
+	}
+	
 	public void replenishReport()
 	{
 		this.currentReport = 0;

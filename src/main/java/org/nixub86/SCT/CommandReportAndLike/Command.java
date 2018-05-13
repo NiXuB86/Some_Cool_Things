@@ -20,7 +20,7 @@ public class Command implements ICommand{
 	
 	protected final List ListCommand;
 	
-	protected String nameCommandReport, nameCommnadLike, nameCommnadInfo;
+	protected String nameCommandReport, nameCommnadLike, nameCommnadInfo, nameCommandZadanie;
 	
 	
 	
@@ -33,6 +33,7 @@ public class Command implements ICommand{
 		nameCommandReport = "rep";
 		nameCommnadLike = "like";
 		nameCommnadInfo = "information";
+		nameCommandZadanie = "zadanie";
 	}
 	
 	@Override
@@ -75,6 +76,7 @@ public class Command implements ICommand{
 		ListCommand.add("rep");
 		ListCommand.add("like");
 		ListCommand.add("info");
+		ListCommand.add("zadanie");
 		return ListCommand;
 	}
 

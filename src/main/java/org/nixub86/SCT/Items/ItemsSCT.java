@@ -80,7 +80,7 @@ public class ItemsSCT extends Item{
 	
 	public static ItemFood Food;
 	
-	
+
 	
 	public static Generaciya generaciya = new Generaciya();
 	public static WorldGenGeshTree GenTree = new WorldGenGeshTree(false);
@@ -117,9 +117,7 @@ public class ItemsSCT extends Item{
 		Food = new Food(15,7, false);
 		GameRegistry.registerItem(Food, "Food");
 		
-		
-		
-		
+				
 		
 		SharpSword = new SharpTriniumSword(null);
 		GameRegistry.registerItem(SharpSword, "Sharp Sword");

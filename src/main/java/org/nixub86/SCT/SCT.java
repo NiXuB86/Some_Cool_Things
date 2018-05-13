@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.nixub86.SCT.CommandReportAndLike.CommandLike;
 import org.nixub86.SCT.CommandReportAndLike.CommandReport;
+import org.nixub86.SCT.CommandReportAndLike.CommandZadan;
 import org.nixub86.SCT.CommandReportAndLike.EventReport;
 import org.nixub86.SCT.CommandReportAndLike.Info;
 import org.nixub86.SCT.CommandReportAndLike.MessageReport;
@@ -48,7 +49,6 @@ public class SCT {
 	
 	public static SimpleNetworkWrapper network;
 	
-	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e)
 	{
@@ -67,6 +67,8 @@ public class SCT {
 		MinecraftForge.EVENT_BUS.register(new EventReport.Player());
 		//FMLCommonHandler.instance().bus().register(new EventReport.Common());
 		
+		
+		
 	    proxy.init(e);
 	}
 
@@ -81,6 +83,7 @@ public class SCT {
 		e.registerServerCommand(new CommandReport());
 		e.registerServerCommand(new CommandLike());
 		e.registerServerCommand(new Info());
+		e.registerServerCommand(new CommandZadan());
 		
 	
 	}
